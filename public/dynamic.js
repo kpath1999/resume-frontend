@@ -6,7 +6,7 @@ const options = {
   }
 };
   
-fetch('https://911nmu76pd.execute-api.us-east-1.amazonaws.com/test/postCount', options)
+fetch('https://56uump58ii.execute-api.us-east-1.amazonaws.com/dev/', options)
   .then(response => {
     if (response.ok) {
       return response.json();
