@@ -15,6 +15,6 @@ fetch('https://56uump58ii.execute-api.us-east-1.amazonaws.com/dev/', options)
     }
   })
   .then(data => {
-    document.querySelector('h3').insertAdjacentHTML('beforeend', data);
+    document.querySelector('visits').insertAdjacentHTML('beforeend', data);
   })
   .catch(error => console.log('Error: ', error));
