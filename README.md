@@ -23,7 +23,7 @@ The learning curve here was primarily concentrated within the DNS configuration 
 
 And [here’s the frontend](https://kausarpatherya.com)!
 
-![Landing page](landing-page.png)
+![Landing page](landing-page.PNG)
 
 ## Summary
 
