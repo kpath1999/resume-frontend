@@ -26,7 +26,7 @@ description:
   Welcome to my blog! I like writing about technology, fitness, philosophy, history and just about 
   anything I find interesting. I'm fascinated by Artificial Intelligence and where it can 
   lead our civilization. I hope to be part of this revolution, contributing in my own little way.
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kausarpatherya.com/" # the base hostname & protocol for your site, e.g. http://example.com
 
 
