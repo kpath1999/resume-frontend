@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-01-06T09:36:39+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Kausar Patherya</title><subtitle>Welcome to my blog! I like writing about technology, fitness, philosophy, history and just about  anything I find interesting. I&apos;m fascinated by Artificial Intelligence and where it can  lead our civilization. I hope to be part of this revolution, contributing in my own little way.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2024/01/06/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2024-01-06T09:17:12+05:30</published><updated>2024-01-06T09:17:12+05:30</updated><id>http://localhost:4000/jekyll/update/2024/01/06/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/01/06/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Tom&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &apos;Hi, Tom&apos; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">My first post!</title><link href="http://localhost:4000/jekyll/update/2024/01/03/welcome-to-jekyll.html" rel="alternate" type="text/html" title="My first post!" /><published>2024-01-03T12:16:40+05:30</published><updated>2024-01-03T12:16:40+05:30</updated><id>http://localhost:4000/jekyll/update/2024/01/03/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/01/03/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Tom&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &apos;Hi, Tom&apos; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">a post with TikZJax</title><link href="http://localhost:4000/sample-posts/2023/12/13/tikzjax.html" rel="alternate" type="text/html" title="a post with TikZJax" /><published>2023-12-13T03:55:00+05:30</published><updated>2023-12-13T03:55:00+05:30</updated><id>http://localhost:4000/sample-posts/2023/12/13/tikzjax</id><content type="html" xml:base="http://localhost:4000/sample-posts/2023/12/13/tikzjax.html">&lt;p&gt;This is an example post with TikZ code. TikZJax converts script tags (containing TikZ code) into SVGs.&lt;/p&gt;
+
+&lt;script type=&quot;text/tikz&quot;&gt;
+\begin{tikzpicture}
+    \draw[red,fill=black!60!red] (0,0) circle [radius=1.5];
+    \draw[green,fill=black!60!green] (0,0) circle [x radius=1.5cm, y radius=10mm];
+    \draw[blue,fill=black!60!blue] (0,0) circle [x radius=1cm, y radius=5mm, rotate=30];
+\end{tikzpicture}
+&lt;/script&gt;</content><author><name></name></author><category term="sample-posts" /><category term="formatting" /><category term="diagrams" /><summary type="html">This is an example post with TikZ code. TikZJax converts script tags (containing TikZ code) into SVGs.</summary></entry><entry><title type="html">a post with custom blockquotes</title><link href="http://localhost:4000/sample-posts/2023/05/13/custom-blockquotes.html" rel="alternate" type="text/html" title="a post with custom blockquotes" /><published>2023-05-13T01:23:00+05:30</published><updated>2023-05-13T01:23:00+05:30</updated><id>http://localhost:4000/sample-posts/2023/05/13/custom-blockquotes</id><content type="html" xml:base="http://localhost:4000/sample-posts/2023/05/13/custom-blockquotes.html">&lt;p&gt;This post shows how to add custom styles for blockquotes. Based on &lt;a href=&quot;https://github.com/sighingnow/jekyll-gitbook&quot;&gt;jekyll-gitbook&lt;/a&gt; implementation.&lt;/p&gt;
+
+&lt;p&gt;We decided to support the same custom blockquotes as in &lt;a href=&quot;https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-06-30-tips_warnings_dangers.html&quot;&gt;jekyll-gitbook&lt;/a&gt;, which are also found in a lot of other sites’ styles. The styles definitions can be found on the &lt;a href=&quot;https://github.com/alshedivat/al-folio/blob/master/_sass/_base.scss&quot;&gt;_base.scss&lt;/a&gt; file, more specifically:&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* Tips, warnings, and dangers */&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.post&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.post-content&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;blockquote&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.block-tip&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global-tip-block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global-tip-block-bg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global-tip-block-text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h6&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global-tip-block-title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.block-warning&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global-warning-block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global-warning-block-bg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global-warning-block-text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h6&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global-warning-block-title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.block-danger&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global-danger-block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global-danger-block-bg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global-danger-block-text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h6&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global-danger-block-title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;A regular blockquote can be used as following:&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gt&quot;&gt;&amp;gt; This is a regular blockquote&lt;/span&gt;
+&lt;span class=&quot;gt&quot;&gt;&amp;gt; and it can be used as usual&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is a regular blockquote
+and it can be used as usual&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;These custom styles can be used by adding the specific class to the blockquote, as follows:&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gt&quot;&gt;&amp;gt; ##### TIP&lt;/span&gt;
+&lt;span class=&quot;gt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;gt&quot;&gt;&amp;gt; A tip can be used when you want to give advice&lt;/span&gt;
+&lt;span class=&quot;gt&quot;&gt;&amp;gt; related to a certain content.&lt;/span&gt;
+{: .block-tip }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote class=&quot;block-tip&quot;&gt;
+  &lt;h5 id=&quot;tip&quot;&gt;TIP&lt;/h5&gt;
+
+  &lt;p&gt;A tip can be used when you want to give advice
+related to a certain content.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gt&quot;&gt;&amp;gt; ##### WARNING&lt;/span&gt;
+&lt;span class=&quot;gt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;gt&quot;&gt;&amp;gt; This is a warning, and thus should&lt;/span&gt;
+&lt;span class=&quot;gt&quot;&gt;&amp;gt; be used when you want to warn the user&lt;/span&gt;
+{: .block-warning }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote class=&quot;block-warning&quot;&gt;
+  &lt;h5 id=&quot;warning&quot;&gt;WARNING&lt;/h5&gt;
+
+  &lt;p&gt;This is a warning, and thus should
+be used when you want to warn the user&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gt&quot;&gt;&amp;gt; ##### DANGER&lt;/span&gt;
+&lt;span class=&quot;gt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;gt&quot;&gt;&amp;gt; This is a danger zone, and thus should&lt;/span&gt;
+&lt;span class=&quot;gt&quot;&gt;&amp;gt; be used carefully&lt;/span&gt;
+{: .block-danger }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote class=&quot;block-danger&quot;&gt;
+  &lt;h5 id=&quot;danger&quot;&gt;DANGER&lt;/h5&gt;
+
+  &lt;p&gt;This is a danger zone, and thus should
+be used carefully&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><category term="sample-posts" /><category term="formatting" /><category term="blockquotes" /><summary type="html">This post shows how to add custom styles for blockquotes. Based on jekyll-gitbook implementation.</summary></entry><entry><title type="html">a post with table of contents on a sidebar</title><link href="http://localhost:4000/sample-posts/2023/04/25/sidebar-table-of-contents.html" rel="alternate" type="text/html" title="a post with table of contents on a sidebar" /><published>2023-04-25T19:44:00+05:30</published><updated>2023-04-25T19:44:00+05:30</updated><id>http://localhost:4000/sample-posts/2023/04/25/sidebar-table-of-contents</id><content type="html" xml:base="http://localhost:4000/sample-posts/2023/04/25/sidebar-table-of-contents.html">&lt;p&gt;This post shows how to add a table of contents as a sidebar.&lt;/p&gt;
+
+&lt;h2 id=&quot;adding-a-table-of-contents&quot;&gt;Adding a Table of Contents&lt;/h2&gt;
+
+&lt;p&gt;To add a table of contents to a post as a sidebar, simply add&lt;/p&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;toc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;sidebar&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;left&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;to the front matter of the post. The table of contents will be automatically generated from the headings in the post. If you wish to display the sidebar to the right, simply change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;left&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;right&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;example-of-sub-heading-1&quot;&gt;Example of Sub-Heading 1&lt;/h3&gt;
+
+&lt;p&gt;Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. &lt;a href=&quot;https://www.pinterest.com&quot;&gt;Pinterest&lt;/a&gt; DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade &lt;a href=&quot;https://en.wikipedia.org/wiki/Cold-pressed_juice&quot;&gt;cold-pressed&lt;/a&gt; meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.&lt;/p&gt;
+
+&lt;h3 id=&quot;example-of-another-sub-heading-1&quot;&gt;Example of another Sub-Heading 1&lt;/h3&gt;
+
+&lt;p&gt;Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. &lt;a href=&quot;https://www.pinterest.com&quot;&gt;Pinterest&lt;/a&gt; DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade &lt;a href=&quot;https://en.wikipedia.org/wiki/Cold-pressed_juice&quot;&gt;cold-pressed&lt;/a&gt; meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.&lt;/p&gt;
+
+&lt;h2 data-toc-text=&quot;Customizing&quot; id=&quot;customizing-your-table-of-contents&quot;&gt;Customizing Your Table of Contents&lt;/h2&gt;
+
+&lt;p&gt;If you want to learn more about how to customize the table of contents of your sidebar, you can check the &lt;a href=&quot;https://afeld.github.io/bootstrap-toc/&quot;&gt;bootstrap-toc&lt;/a&gt; documentation. Notice that you can even customize the text of the heading that will be displayed on the sidebar.&lt;/p&gt;
+
+&lt;h3 id=&quot;example-of-sub-heading-2&quot;&gt;Example of Sub-Heading 2&lt;/h3&gt;
+
+&lt;p&gt;Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. &lt;a href=&quot;https://www.pinterest.com&quot;&gt;Pinterest&lt;/a&gt; DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade &lt;a href=&quot;https://en.wikipedia.org/wiki/Cold-pressed_juice&quot;&gt;cold-pressed&lt;/a&gt; meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.&lt;/p&gt;
+
+&lt;h3 id=&quot;example-of-another-sub-heading-2&quot;&gt;Example of another Sub-Heading 2&lt;/h3&gt;
+
+&lt;p&gt;Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. &lt;a href=&quot;https://www.pinterest.com&quot;&gt;Pinterest&lt;/a&gt; DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade &lt;a href=&quot;https://en.wikipedia.org/wiki/Cold-pressed_juice&quot;&gt;cold-pressed&lt;/a&gt; meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.&lt;/p&gt;</content><author><name></name></author><category term="sample-posts" /><category term="formatting" /><category term="toc" /><category term="sidebar" /><summary type="html">This post shows how to add a table of contents as a sidebar.</summary></entry><entry><title type="html">displaying beautiful tables with Bootstrap Tables</title><link href="http://localhost:4000/sample-posts/2023/03/21/tables.html" rel="alternate" type="text/html" title="displaying beautiful tables with Bootstrap Tables" /><published>2023-03-21T00:07:00+05:30</published><updated>2023-03-21T00:07:00+05:30</updated><id>http://localhost:4000/sample-posts/2023/03/21/tables</id><content type="html" xml:base="http://localhost:4000/sample-posts/2023/03/21/tables.html">&lt;p&gt;Using markdown to display tables is easy. Just use the following syntax:&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;| Left aligned | Center aligned | Right aligned |
+| :----------- | :------------: | ------------: |
+| Left 1       | center 1       | right 1       |
+| Left 2       | center 2       | right 2       |
+| Left 3       | center 3       | right 3       |
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;That will generate:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Left aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Center aligned&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Right aligned&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Left 1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;center 1&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;right 1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Left 2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;center 2&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;right 2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Left 3&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;center 3&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;right 3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;It is also possible to use HTML to display tables. For example, the following HTML code will display a table with &lt;a href=&quot;https://bootstrap-table.com/&quot;&gt;Bootstrap Table&lt;/a&gt;, loaded from a JSON file:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;table&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;table&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;data-toggle=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;table&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;data-url=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ &apos;/assets/json/table_data.json&apos; | relative_url }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;thead&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-field=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;ID&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-field=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Item Name&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-field=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;price&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Item Price&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/thead&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/table&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table data-toggle=&quot;table&quot; data-url=&quot;/assets/json/table_data.json&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th data-field=&quot;id&quot;&gt;ID&lt;/th&gt;
+      &lt;th data-field=&quot;name&quot;&gt;Item Name&lt;/th&gt;
+      &lt;th data-field=&quot;price&quot;&gt;Item Price&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;By using &lt;a href=&quot;https://bootstrap-table.com/&quot;&gt;Bootstrap Table&lt;/a&gt; it is possible to create pretty complex tables, with pagination, search, and more. For example, the following HTML code will display a table, loaded from a JSON file, with pagination, search, checkboxes, and header/content alignment. For more information, check the &lt;a href=&quot;https://examples.bootstrap-table.com/index.html&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;table&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;data-click-to-select=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;data-height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;460&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;data-pagination=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;data-search=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;data-toggle=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;table&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;data-url=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ &apos;/assets/json/table_data.json&apos; | relative_url }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;thead&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-checkbox=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-field=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;id&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-halign=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;left&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-align=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;center&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-sortable=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;ID&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-field=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-halign=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;center&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-align=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;right&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-sortable=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Item Name&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-field=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;price&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-halign=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;right&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-align=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;left&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-sortable=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Item Price&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/thead&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/table&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table data-click-to-select=&quot;true&quot; data-height=&quot;460&quot; data-pagination=&quot;true&quot; data-search=&quot;true&quot; data-toggle=&quot;table&quot; data-url=&quot;/assets/json/table_data.json&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th data-checkbox=&quot;true&quot;&gt;&lt;/th&gt;
+      &lt;th data-field=&quot;id&quot; data-halign=&quot;left&quot; data-align=&quot;center&quot; data-sortable=&quot;true&quot;&gt;ID&lt;/th&gt;
+      &lt;th data-field=&quot;name&quot; data-halign=&quot;center&quot; data-align=&quot;right&quot; data-sortable=&quot;true&quot;&gt;Item Name&lt;/th&gt;
+      &lt;th data-field=&quot;price&quot; data-halign=&quot;right&quot; data-align=&quot;left&quot; data-sortable=&quot;true&quot;&gt;Item Price&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+&lt;/table&gt;</content><author><name></name></author><category term="sample-posts" /><category term="formatting" /><category term="tables" /><summary type="html">Using markdown to display tables is easy. Just use the following syntax:</summary></entry><entry><title type="html">a post with table of contents</title><link href="http://localhost:4000/sample-posts/2023/03/20/table-of-contents.html" rel="alternate" type="text/html" title="a post with table of contents" /><published>2023-03-20T21:29:00+05:30</published><updated>2023-03-20T21:29:00+05:30</updated><id>http://localhost:4000/sample-posts/2023/03/20/table-of-contents</id><content type="html" xml:base="http://localhost:4000/sample-posts/2023/03/20/table-of-contents.html">&lt;p&gt;This post shows how to add a table of contents in the beginning of the post.&lt;/p&gt;
+
+&lt;h2 id=&quot;adding-a-table-of-contents&quot;&gt;Adding a Table of Contents&lt;/h2&gt;
+
+&lt;p&gt;To add a table of contents to a post, simply add&lt;/p&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;toc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;beginning&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;to the front matter of the post. The table of contents will be automatically generated from the headings in the post.&lt;/p&gt;
+
+&lt;h3 id=&quot;example-of-sub-heading-1&quot;&gt;Example of Sub-Heading 1&lt;/h3&gt;
+
+&lt;p&gt;Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. &lt;a href=&quot;https://www.pinterest.com&quot;&gt;Pinterest&lt;/a&gt; DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade &lt;a href=&quot;https://en.wikipedia.org/wiki/Cold-pressed_juice&quot;&gt;cold-pressed&lt;/a&gt; meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.&lt;/p&gt;
+
+&lt;h3 id=&quot;example-of-another-sub-heading-1&quot;&gt;Example of another Sub-Heading 1&lt;/h3&gt;
+
+&lt;p&gt;Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. &lt;a href=&quot;https://www.pinterest.com&quot;&gt;Pinterest&lt;/a&gt; DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade &lt;a href=&quot;https://en.wikipedia.org/wiki/Cold-pressed_juice&quot;&gt;cold-pressed&lt;/a&gt; meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.&lt;/p&gt;
+
+&lt;h2 id=&quot;table-of-contents-options&quot;&gt;Table of Contents Options&lt;/h2&gt;
+
+&lt;p&gt;If you want to learn more about how to customize the table of contents, you can check the &lt;a href=&quot;https://github.com/toshimaru/jekyll-toc&quot;&gt;jekyll-toc&lt;/a&gt; repository.&lt;/p&gt;
+
+&lt;h3 id=&quot;example-of-sub-heading-2&quot;&gt;Example of Sub-Heading 2&lt;/h3&gt;
+
+&lt;p&gt;Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. &lt;a href=&quot;https://www.pinterest.com&quot;&gt;Pinterest&lt;/a&gt; DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade &lt;a href=&quot;https://en.wikipedia.org/wiki/Cold-pressed_juice&quot;&gt;cold-pressed&lt;/a&gt; meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.&lt;/p&gt;
+
+&lt;h3 id=&quot;example-of-another-sub-heading-2&quot;&gt;Example of another Sub-Heading 2&lt;/h3&gt;
+
+&lt;p&gt;Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. &lt;a href=&quot;https://www.pinterest.com&quot;&gt;Pinterest&lt;/a&gt; DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade &lt;a href=&quot;https://en.wikipedia.org/wiki/Cold-pressed_juice&quot;&gt;cold-pressed&lt;/a&gt; meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.&lt;/p&gt;</content><author><name></name></author><category term="sample-posts" /><category term="formatting" /><category term="toc" /><summary type="html">This post shows how to add a table of contents in the beginning of the post.</summary></entry><entry><title type="html">a post with giscus comments</title><link href="http://localhost:4000/sample-posts/external-services/2022/12/10/giscus-comments.html" rel="alternate" type="text/html" title="a post with giscus comments" /><published>2022-12-10T21:29:00+05:30</published><updated>2022-12-10T21:29:00+05:30</updated><id>http://localhost:4000/sample-posts/external-services/2022/12/10/giscus-comments</id><content type="html" xml:base="http://localhost:4000/sample-posts/external-services/2022/12/10/giscus-comments.html">&lt;p&gt;This post shows how to add GISCUS comments.&lt;/p&gt;</content><author><name></name></author><category term="sample-posts" /><category term="external-services" /><category term="comments" /><summary type="html">This post shows how to add GISCUS comments.</summary></entry><entry><title type="html">a post with redirect</title><link href="http://localhost:4000/2022/02/01/redirect.html" rel="alternate" type="text/html" title="a post with redirect" /><published>2022-02-01T23:09:00+05:30</published><updated>2022-02-01T23:09:00+05:30</updated><id>http://localhost:4000/2022/02/01/redirect</id><content type="html" xml:base="http://localhost:4000/2022/02/01/redirect.html">&lt;p&gt;Redirecting to another page.&lt;/p&gt;</content><author><name></name></author><summary type="html">Redirecting to another page.</summary></entry><entry><title type="html">a post with diagrams</title><link href="http://localhost:4000/2021/07/04/diagrams.html" rel="alternate" type="text/html" title="a post with diagrams" /><published>2021-07-04T23:09:00+05:30</published><updated>2021-07-04T23:09:00+05:30</updated><id>http://localhost:4000/2021/07/04/diagrams</id><content type="html" xml:base="http://localhost:4000/2021/07/04/diagrams.html">&lt;p&gt;This theme supports generating various diagrams from a text description using &lt;a href=&quot;https://mermaid-js.github.io/mermaid/&quot; target=&quot;\_blank&quot;&gt;mermaid&lt;/a&gt;. Previously, this was done using the &lt;a href=&quot;https://github.com/zhustec/jekyll-diagrams&quot; target=&quot;\_blank&quot;&gt;jekyll-diagrams&lt;/a&gt; plugin. For more information on this matter, see the &lt;a href=&quot;https://github.com/alshedivat/al-folio/issues/1609#issuecomment-1656995674&quot;&gt;related issue&lt;/a&gt;. To disable the zooming feature, set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mermaid.zoomable&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt; in this post frontmatter.&lt;/p&gt;
+
+&lt;h2 id=&quot;mermaid&quot;&gt;Mermaid&lt;/h2&gt;
+
+&lt;p&gt;The diagram below was generated by the following code:&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;```&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;mermaid
+&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;sequenceDiagram
+    participant John
+    participant Alice
+    Alice-&amp;gt;&amp;gt;John: Hello John, how are you?
+    John--&amp;gt;&amp;gt;Alice: Great!&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;```&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;sequenceDiagram
+    participant John
+    participant Alice
+    Alice-&amp;gt;&amp;gt;John: Hello John, how are you?
+    John--&amp;gt;&amp;gt;Alice: Great!
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><category term="formatting" /><category term="diagrams" /><summary type="html">This theme supports generating various diagrams from a text description using mermaid. Previously, this was done using the jekyll-diagrams plugin. For more information on this matter, see the related issue. To disable the zooming feature, set mermaid.zoomable to false in this post frontmatter.</summary></entry></feed>
