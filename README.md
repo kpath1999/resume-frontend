@@ -26,7 +26,7 @@ And [here’s the frontend](https://kausarpatherya.com)!
 ![Landing page](landing-page.PNG)
 
 
-As can be seen in the above picture, the primary job of the AWS frontend architecture is to display the visit count. The count data is received from the underlying database. I also used this opportunity to host my own blog on my website using Jekyll, a static site generator.
+As can be seen in the above picture, the primary job of the AWS frontend architecture is to display the visit count. The count data is received from the underlying database. I also used this opportunity to host my own blog using Jekyll, a static site generator. More details have been included in [this](https://github.com/kpath1999/kausar-blog-jekyll) repository.
 
 ## Summary
 
