@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed/index.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-02-12T11:07:31-06:00</updated><id>http://localhost:4000/feed/index.xml</id><title type="html">Kausar Patherya</title><subtitle>Welcome to my blog! I like writing about technology, fitness, philosophy, history and just about  anything I find interesting. I&apos;m fascinated by Artificial Intelligence and where it can  lead our civilization. I hope to be part of this revolution, contributing in my own little way.</subtitle><entry><title type="html">Habit Tracking</title><link href="http://localhost:4000/2024/02/11/habit-tracking.html" rel="alternate" type="text/html" title="Habit Tracking" /><published>2024-02-11T15:15:16-06:00</published><updated>2024-02-11T15:15:16-06:00</updated><id>http://localhost:4000/2024/02/11/habit-tracking</id><content type="html" xml:base="http://localhost:4000/2024/02/11/habit-tracking.html">&lt;p&gt;We all want to look good, be healthy, lead meaningful lives, be… happy, or some variant of that word. Why is it that only a handful of us ever reach that destination? We live in a world that’s never been as technologically advanced and globally connected. Why is that so many of us feel more detached and lost in our lives? In this blog post, I delve into these questions, trying to unravel what might be the real cause of our suffering.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed/index.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-02-15T21:28:21-06:00</updated><id>http://localhost:4000/feed/index.xml</id><title type="html">Kausar Patherya</title><subtitle>Welcome to my blog! I like writing about technology, fitness, philosophy, history and just about  anything I find interesting. I&apos;m fascinated by Artificial Intelligence and where it can  lead our civilization. I hope to be part of this revolution, contributing in my own little way.</subtitle><entry><title type="html">Habit Tracking</title><link href="http://localhost:4000/2024/02/11/habit-tracking.html" rel="alternate" type="text/html" title="Habit Tracking" /><published>2024-02-11T15:15:16-06:00</published><updated>2024-02-11T15:15:16-06:00</updated><id>http://localhost:4000/2024/02/11/habit-tracking</id><content type="html" xml:base="http://localhost:4000/2024/02/11/habit-tracking.html">&lt;p&gt;We all want to look good, be healthy, lead meaningful lives, be… happy, or some variant of that word. Why is it that only a handful of us ever reach that destination? We live in a world that’s never been as technologically advanced and globally connected. Why is that so many of us feel more detached and lost in our lives? In this blog post, I delve into these questions, trying to unravel what might be the real cause of our suffering.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/pics/wanderer_painting.webp&quot; alt=&quot;Wanderer&quot; /&gt;&lt;/p&gt;
 
@@ -36,15 +36,17 @@
 
 &lt;p&gt;A lot of my motivation around getting proficient with cloud technologies was more work-related. The consulting firm I work at emphasizes that its employees use their free time studying for certifications and taking these IT exams. When I wasn’t staffed or had some spare time on my hands, that’s exactly what I did. Memorizing theoretical concepts in a rote fashion only got me so far though. What made the difference in my learning was using the cloud platform and applying what I learned. I would take a lot of practice exams, make mistakes, and learn from them. I would engage in hands-on labs, where I interacted with the cloud console in an interactive fashion, learning at a far higher rate. A bit of a flex, but I’m including the certifications I earned below:&lt;/p&gt;
 
-&lt;p&gt;* AWS Certified Solutions Architect – Associate (&lt;a href=&quot;&quot;&gt;badge&lt;/a&gt;)
-* Machine Learning Specialization (&lt;a href=&quot;&quot;&gt;badge&lt;/a&gt;)
-* Mathematics for Machine Learning and Data Science (&lt;a href=&quot;&quot;&gt;badge&lt;/a&gt;)
-* FinOps Certified Practitioner (&lt;a href=&quot;&quot;&gt;badge&lt;/a&gt;)
-* AWS Certified Cloud Practitioner (&lt;a href=&quot;&quot;&gt;badge&lt;/a&gt;)
-* Google Cloud Digital Leader (&lt;a href=&quot;&quot;&gt;badge&lt;/a&gt;)
-* Microsoft Azure Fundamentals (&lt;a href=&quot;&quot;&gt;badge&lt;/a&gt;)
-* Microsoft 365 Fundamentals (&lt;a href=&quot;&quot;&gt;badge&lt;/a&gt;)
-* &lt;em&gt;…and more!&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;AWS Certified Solutions Architect – Associate (&lt;a href=&quot;https://www.credly.com/badges/70f83be8-56b1-47ad-a8b5-57cdb4e0b6af/public_url?trk=public_profile_see-credential&quot;&gt;badge&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Machine Learning Specialization (&lt;a href=&quot;https://coursera.org/share/a02fe4c881bc12ad15193bc1a578c827?trk=public_profile_see-credential&quot;&gt;badge&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Mathematics for Machine Learning and Data Science (&lt;a href=&quot;https://coursera.org/share/876735bc68388382f17d78f9a104011b?trk=public_profile_see-credential&quot;&gt;badge&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;FinOps Certified Practitioner (&lt;a href=&quot;https://coursera.org/share/876735bc68388382f17d78f9a104011b?trk=public_profile_see-credential&quot;&gt;badge&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;AWS Certified Cloud Practitioner (&lt;a href=&quot;https://www.credly.com/badges/451decf3-cb74-422a-912f-bd819921b668/public_url?trk=public_profile_see-credential&quot;&gt;badge&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Google Cloud Digital Leader (&lt;a href=&quot;https://www.credential.net/316e2186-53f7-4281-8733-920048ab0069?key=65ec3412d2fe42e02ed3053725c7a51540e94b457c959169f7600b8ac461b238&amp;amp;trk=public_profile_see-credential&quot;&gt;badge&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Microsoft Azure Fundamentals (&lt;a href=&quot;https://www.credly.com/badges/233f5418-6fc1-46eb-b07a-8103d35582ba/public_url?trk=public_profile_see-credential&quot;&gt;badge&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Microsoft 365 Fundamentals (&lt;a href=&quot;https://www.credly.com/badges/233f5418-6fc1-46eb-b07a-8103d35582ba/public_url?trk=public_profile_see-credential&quot;&gt;badge&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;…and more!&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;I learned a lot in the process, but I felt something missing. There was a practical dimension that I hadn’t experienced. Just having the credential didn’t prove that you could do the job. I internalized this concern and worked on my first cloud project – the AWS Resume Challenge by Forrest Brazeal. It gave me a solid understanding of how to go about setting up a website frontend (link) and backend (link), and how to connect the 2 with an API. Incidentally, the visit count at the bottom of the home page was the key outcome of this project. I experienced an immense sense of pride upon completing that project. It made me realize that I love programming and building things. Honing this skill became my utmost priority.&lt;/p&gt;
 
@@ -54,11 +56,7 @@
 
 &lt;h3 id=&quot;fitness&quot;&gt;Fitness&lt;/h3&gt;
 
-&lt;p&gt;This has been the game changer in my life. If you looked at my pictures from 3 years ago, you would barely recognize me. In fact, let me include a before-after picture below:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/pics/before-after.jpg&quot; alt=&quot;A before-after picture&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I simply did not like the way I looked for the longest time. There was a sense of shame I felt that was eating into me. I had to take matters into my own hands, or I would have to silently suffer like this for all my life. That’s when I signed up for a gym membership at Anytime Fitness, Champaign IL on May 7th, 2021. I still remember the date because, from that day forward, my life would never be the same. Since writing this, I have gained considerable muscle mass, lifted more weight than I ever thought imaginable, learned to swim in the open water, completed 4 triathlons, become an active member of the CrossFit community, and I am only getting started.&lt;/p&gt;
+&lt;p&gt;This has been the game changer in my life. If you looked at my pictures from 3 years ago, you would barely recognize me. I simply did not like the way I looked for the longest time. There was a sense of shame I felt that was eating into me. I had to take matters into my own hands, or I would have to silently suffer like this for all my life. That’s when I signed up for a gym membership at Anytime Fitness, Champaign IL on May 7th, 2021. I still remember the date because, from that day forward, my life would never be the same. Since writing this, I have gained considerable muscle mass, lifted more weight than I ever thought imaginable, learned to swim in the open water, completed 4 triathlons, become an active member of the CrossFit community, and I am only getting started.&lt;/p&gt;
 
 &lt;p&gt;The journey of a thousand miles begins with a single step. That first step involved overcoming inertia and showing up for my first personal training session, uncertain about what to expect. I remember paying around $500 for an 8-class package – a lot of money for a college student to spend. My friends (at the time) laughed at my decision, but I figured I would stick to my guns. Those $500 turned out to me the wisest investment I’ve ever made in myself. My coach taught me everything I needed to know about weight training and how to best use my time in the gym. He gave me nutrition advice, especially around protein intake. Within 4 months, I made incredible progress. My body had grown much stronger, and I discovered a newfound confidence I never felt before. I was hooked and each day offered an opportunity for me to get better.&lt;/p&gt;
 
@@ -68,13 +66,15 @@
 
 &lt;p&gt;This is the hobby I am most proud of. I played the piano for a brief period in high school but gave up after a few months. I regretted that decision, but realized it wasn’t too late. My piano teacher, Ela Kriss, in Lakeview, Chicago has been instrumental in my success. I show up for her lessons weekly and practice daily on my keyboard. Deliberate practice over sustained periods of time paid off in a major way. I can now play for small audiences and occasionally get an applause! It’s crazy to see that kind of progress in my 2.5 years, but it is possible. Including a few of my piano performances below in case you don’t believe me:&lt;/p&gt;
 
-&lt;p&gt;* Plaisir d’amour by Jean-Paul-Égide Martini (&lt;a href=&quot;&quot;&gt;video&lt;/a&gt;)
-* The Entertainer by Scott Joplin (&lt;a href=&quot;&quot;&gt;video&lt;/a&gt;)
-* Rigoletto: La donna è mobile by Luciano Pavarotti (&lt;a href=&quot;&quot;&gt;video&lt;/a&gt;)
-* Light &amp;amp; Blue by William A. Palmer (&lt;a href=&quot;&quot;&gt;video&lt;/a&gt;)
-* On Top of Old Smokey by William A. Palmer (&lt;a href=&quot;&quot;&gt;video&lt;/a&gt;)
-* O Sole Mio by Luciano Pavarotti (&lt;a href=&quot;&quot;&gt;video&lt;/a&gt;)
-* &lt;em&gt;…and hopefully many more!&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Plaisir d’amour by Jean-Paul-Égide Martini (&lt;a href=&quot;https://www.youtube.com/watch?v=EPjfdtw0_Xw&quot;&gt;video&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;The Entertainer by Scott Joplin (&lt;a href=&quot;https://www.youtube.com/watch?v=9vNlzncJvBI&quot;&gt;video&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Rigoletto: La donna è mobile by Luciano Pavarotti (&lt;a href=&quot;https://www.youtube.com/watch?v=s1YlNkvGlu8&amp;amp;pp=ygUea2F1c2FyIGVsYWtyaXNzbXVzaWMgcmlnb2xldHRv&quot;&gt;video&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Light &amp;amp; Blue by William A. Palmer (&lt;a href=&quot;https://www.youtube.com/watch?v=Ug30x-NHlPg&quot;&gt;video&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;On Top of Old Smokey by William A. Palmer (&lt;a href=&quot;https://www.youtube.com/watch?v=0dO64WZCKQU&quot;&gt;video&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;O Sole Mio by Luciano Pavarotti (&lt;a href=&quot;https://www.youtube.com/watch?v=mwITVqPAvQY&quot;&gt;video&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;…and hopefully many more!&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;None of this has come easy, but I find playing music incredibly therapeutic. There are things I can’t communicate through words that I can only express through music. I really wonder why it is that certain classical pieces move us do deeply. The relationship between music and the mind is something I would love to explore.&lt;/p&gt;
 
@@ -124,28 +124,28 @@
 
 &lt;h3 id=&quot;closing-thoughts&quot;&gt;Closing Thoughts&lt;/h3&gt;
 
-&lt;p&gt;I wrote this post as a reminder to myself, on what has worked for me, and how I choose to live my life. Developing routines and habits is at the crux of what we do as humans. The quality of our days ultimately defines the quality of our lives.&lt;/p&gt;</content><author><name></name></author><summary type="html">Building robust systems for physical, mental &amp; spiritual flourishing</summary></entry><entry><title type="html">Morning Pages</title><link href="http://localhost:4000/2024/02/04/morning-pages.html" rel="alternate" type="text/html" title="Morning Pages" /><published>2024-02-04T15:15:16-06:00</published><updated>2024-02-04T15:15:16-06:00</updated><id>http://localhost:4000/2024/02/04/morning-pages</id><content type="html" xml:base="http://localhost:4000/2024/02/04/morning-pages.html">&lt;h2 id=&quot;motivation&quot;&gt;Motivation&lt;/h2&gt;
-
-&lt;p&gt;Work in progress. I will write about why I started morning pages in the first place and what I hoped to gain from it.&lt;/p&gt;
+&lt;p&gt;I wrote this post as a reminder to myself, on what has worked for me, and how I choose to live my life. Developing routines and habits is at the crux of what we do as humans. The quality of our days ultimately defines the quality of our lives.&lt;/p&gt;</content><author><name></name></author><summary type="html">Building robust systems for physical, mental &amp; spiritual flourishing</summary></entry><entry><title type="html">Morning Pages</title><link href="http://localhost:4000/2024/02/04/morning-pages.html" rel="alternate" type="text/html" title="Morning Pages" /><published>2024-02-04T15:15:16-06:00</published><updated>2024-02-04T15:15:16-06:00</updated><id>http://localhost:4000/2024/02/04/morning-pages</id><content type="html" xml:base="http://localhost:4000/2024/02/04/morning-pages.html">&lt;p&gt;Think ‘spiritual windshield wipers.’ That’s what morning pages are to me. And it’s not something I always do in the morning. The whole of this exercise is to dump recurring patterns of thought onto a piece of paper and trap it there. That way, you’ll be able to look at your own thinking with a bit more detachment – especially when you are emotional.&lt;/p&gt;
 
 &lt;h2 id=&quot;daily-practice&quot;&gt;Daily practice&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;/pics/morning-pages.jpg&quot; alt=&quot;Pages&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;How it actually shaped up, how it’s benefitted me.&lt;/p&gt;
+&lt;p&gt;The requirement: 2 pages of unadulterated stream-of-consciousness writing. This is not for anyone’s approval or judgement. As I’ve done this over the past year, I’ve been able to look at my own past writing and see for myself how I’ve been able to cope with the various trials and tribulations that came up in my life. What did I do well, what could I have handled better? Gaining that vantage point is essential to avoid making the same mistakes and improving as a human.&lt;/p&gt;
 
-&lt;h2 id=&quot;realizations&quot;&gt;Realizations&lt;/h2&gt;
+&lt;p&gt;Paper is more patient than people. It’s true. I’ve been able to constructively deal with a great deal of emotional turbulence in my life through the simple act of journaling. Remaining calm, seeing things rationally, being more intentional with my words and actions – this is what journaling has inculcated within me.&lt;/p&gt;
 
-&lt;p&gt;Summarize the high-level takeaways from your writing and the direction it’s given you in life.&lt;/p&gt;
+&lt;p&gt;It also keeps me accountable. I use it as a planning exercise, saying that I’ll accomplish “x” by next week and logging my daily activities, ensuring that I’m inching towards my goal. On our road to mastery, we’re on our own. Nobody’s going to get us to where we want to go. We must be willing to show up for ourselves and do the work. Journaling helps with that. It’s like looking in the mirror and presenting evidence that you are the kind of person you say you are. And it doesn’t work if you’re not willing to show up every day.&lt;/p&gt;
 
-&lt;h2 id=&quot;serving-it-raw&quot;&gt;Serving it raw&lt;/h2&gt;
+&lt;p&gt;I treat this blog as a kind of journal as well, except it’s more structured and semi-coherent. It’s unlikely that a lot of people will ever read this, but that’s okay. It doesn’t matter. The point is for me to (a) be more disciplined with the work I put in, and (b) become a better writer in the process. Personal development is the only thing I’m here for. Everything else is a bonus.&lt;/p&gt;
 
-&lt;p&gt;Providing an introduction to this section. Broke them down into themes and contexts so the reader can skim around as they see fit.&lt;/p&gt;
+&lt;h2 id=&quot;what-does-it-looks-like&quot;&gt;What does it looks like?&lt;/h2&gt;
+
+&lt;p&gt;I transcribed about 6 months of morning pages material and included it in this section – primarily to demonstrate how I go about the whole process. To make your life a bit easier, I divided chunks of my writings into broad themes, adding relevant context under each. Feel free to skip to the final section once you get an essence of what my journaling process looks like. I end this blog with my closing thoughts on what journaling has enabled for me so far, and how I plan on leveraging it in the future.&lt;/p&gt;
 
 &lt;h3 id=&quot;talking-about-graduate-school-the-omscs-program-building-mastery&quot;&gt;Talking about graduate school, the OMSCS program, building mastery&lt;/h3&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: Talk about what was on your mind prior to writing this portion. Assume the reader doesn’t know you.&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: At this point, I was dealing with a dilemma – should I stick to my high-paying job that wasn’t as intellectually stimulating as I hoped, or head to graduate school? I eventually decided on pursuing the latter, with the hopes of building a degree of mastery within my field of study.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;I keep hearing this voice in my head that says I should go back to school, pursue a graduate degree. I wonder where this feeling comes from. I think I’ve always wanted to learn more, and be more effective with the work I put out into the world. To put these thoughts into action, I’m starting off with the Georgia Tech degree that would MAX take me 3 years (till 2026). My OPT may expire by then, and I may be in a different geography, getting accustomed to some big change in my life. I may even harness the GTech momentum and pursue a more specialized Master’s or Engineering + MBA degree (although I’m weary of more school). No matter what, I need it to be HARD. No cutting corners. These experiences must be able to provide me with a tangible skill set. I want to build the mental rigor to be able to look at this wonderful world of ours in novel, useful ways.&lt;/p&gt;
@@ -167,7 +167,7 @@ With a mental skill like computer programming, it remains the case that I would 
 &lt;h3 id=&quot;on-meditation-and-the-realizations-ive-begun-to-have&quot;&gt;On meditation and the realizations I’ve begun to have&lt;/h3&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: &amp;lt;&amp;gt;&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: Meditation has yielded many benefits for me. It’s made me a calmer person and I’ve been able to gain more clarity in my own life. I practice daily for 20-30 minutes, first using the Waking Up app, and now without any guidance. I also attended a 10-day Vipassana retreat inspired by the recordings of the late S.N. Goenka.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Ever since I started meditating last year, I began to realize how much calmer and intentional I felt about everything I did thereafter. In an environment where I am mostly by myself, it is important to stay level-headed and avoid spiraling out of control. There have been days where meditating has been difficult. My mind would be distracted by a constant stream of thought and it can be difficult to avoid engaging them. I think it’s a matter of practice. Upon meditating consistently, I have been able to deal with these sensations in a more equanimous manner. I’m less distracted and more at peace. I look forward to my daily meditation sessions. 20 minutes everyday is a worthwhile investment. I hope to go on a meditation retreat this year. I would like to experience what it would be like to remain in a meditative state for hours at a stretch. It’s fascinating to learn more about the nature of mind.&lt;/p&gt;
@@ -201,7 +201,7 @@ With a mental skill like computer programming, it remains the case that I would 
 &lt;h3 id=&quot;developing-a-stoic-mindset&quot;&gt;Developing a stoic mindset&lt;/h3&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: &amp;lt;&amp;gt;&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: I like philosophy, especially stoicism. I find myself watching a lot of Ryan Holiday videos and reading a lot of material on the subject. This section is primarily me applying this mindset to my life and seeing what sticks.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Writing this before going to bed today. It was the first day at work right after the week-long summer break. I spent half of the time networking with colleagues within my practice. I’ve been looking forward to getting involved with cloud engagements occurring at my company. Getting my name out there, helping them out, studying for certifications – these are productive ways to spend my time. No matter what happens in the future, at least I’ll be able to look back at this time and know deep down that I did what I could.&lt;/p&gt;
@@ -221,7 +221,7 @@ With a mental skill like computer programming, it remains the case that I would 
 &lt;h3 id=&quot;philosophical-rants&quot;&gt;Philosophical rants&lt;/h3&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: &amp;lt;&amp;gt;&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: This is me talking about gratitude and acting like a wise-ass philosopher. For what it’s worth, I find it helpful to have these conversations with myself. I hope you do as well.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;I was listening to a talk on stoicism earlier in the morning, and one of the topics delved into our idea of happiness and how best we can go about achieving it. A lot of this can be explained by a gap we all perceive, between what we want and what we have. By bridging this gap, we tell ourselves we’ll finally be happy. We do this unknowingly, only to find out we’ve created another gap for ourselves after fulfilling our previous desires. This pattern can be likened to a hedonic treadmill, where we keep trying to fill a void with things, only to find ourselves craving for more. It’s also illuminating to think about our present selves. There was a time in the past where we wanted all the things we currently have, but we’ve conveniently forgotten about those days. The talk centered around the theme of gratitude, and how we must learn to want the things we currently have. It is the only way to escape the web of desires we trap ourselves in. I try to seek a sense of contentment in the daily activities I engage in. Whether that’s working out, reading, or learning a new skill – I’m trying to celebrate the present moment and remove myself from expecting any future reward.&lt;/p&gt;
@@ -251,7 +251,7 @@ With a mental skill like computer programming, it remains the case that I would 
 &lt;h3 id=&quot;on-following-a-north-star&quot;&gt;On following a north star&lt;/h3&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: &amp;lt;&amp;gt;&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: What’s the goal? Where am I headed? What’s my vision?&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Aside from the goal of passing, I think the Solutions Architect exam is quite interesting. It passes down some practical knowledge about how AWS operates, and how one can go about designing effective workloads in the cloud. It will reflect well on my knowledge and abilities when I pass the exam. It will help me differentiate myself in the workplace. I see this exam as a starting point.&lt;/p&gt;
@@ -276,7 +276,7 @@ Besides the learnings and readings I engage in, my life will turn out to be uniq
 &lt;h3 id=&quot;having-a-practitioners-mindset&quot;&gt;Having a practitioner’s mindset&lt;/h3&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: &amp;lt;&amp;gt;&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: On the importance of doing versus talking. It’s a recurring trend in a lot of books I read. Writing about it helped me understand it better.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Trial and error - the value of tinkering to get one’s desired results. I came across this idea from reading Taleb’s “Antifragile”. The book talks about the value of being a practitioner, an individual who has a net positive impact on the world. He contrasts this ideal with a theoretician, someone who is keen on giving advice without any skin in the game. I found this idea quite compelling. It’s the direction I’d like to take my life in. Instead of getting stuck giving empty advice or turning into a boring academic, I would find much more meaning building tools that are of value to the people around me. Programming is a skill I love improving upon. I enjoy the process of iterating on my work until I get it to a desired place.&lt;/p&gt;
@@ -290,7 +290,7 @@ Besides the learnings and readings I engage in, my life will turn out to be uniq
 &lt;h3 id=&quot;racing-in-triathlons&quot;&gt;Racing in triathlons&lt;/h3&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: &amp;lt;&amp;gt;&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: I took up a rather unusual hobby of racing in triathlons. I’ve always found endurance racing fascinating, especially the physical and mental sides of it.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;My first triathlon turned out to be kind of a disaster. June 11th, 2023 - That’s the day I competed at the Fox Lake Sprint Triathlon. These past 3 months, I’ve been training at the Chicago Athletic Clubs to get in shape for a triathlon. I’ve been waking up at 4:45 AM from Tuesday – Friday working on running, swimming, cycling and core workouts. I put in a lot of work and looked forward to seeing how I would fare at the race.&lt;/p&gt;
@@ -312,7 +312,7 @@ Fast forward to July 23, 2023 - I am writing today hours after completing my fir
 &lt;h3 id=&quot;the-desire-to-be-better&quot;&gt;The desire to be better&lt;/h3&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: &amp;lt;&amp;gt;&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: It’s hard to show up every day. I find myself giving a pep talk to myself time and time again. Enjoy.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;I had an interesting conversation after swim practice. It was regarding the process of getting better at a skill. When it comes to acquiring any skill set, there is a learning curve that can feel quite uncomfortable to cope with at times. It’s in these moments where grit and patience come in handy. It doesn’t always come down to the number of hours you’ve spent on a given activity, but if you’ve engaged in deliberate practice. Oftentimes, we engage in an activity with great enthusiasm only to find out we weren’t doing it quite right. The technique may be slightly off and we end up making the same mistakes over time, solidifying the neural structures behind that habit. These habits keep getting harder to change over time. It is for this reason that it always helps to have a coach guide you through the initial phase of learning. I have seen this quite often in my life so far.&lt;/p&gt;
@@ -330,7 +330,7 @@ Fast forward to July 23, 2023 - I am writing today hours after completing my fir
 &lt;h3 id=&quot;healthy-relationships&quot;&gt;Healthy relationships&lt;/h3&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: &amp;lt;&amp;gt;&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: On how we change as people and how are relationships transform as well. Change is the only constant. Nothing lasts forever.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;It’s interesting to see which relationships are healthy and which are not. I was recently having a conversation with my father regarding this. In many interactions, he feels a bit used - as if the other person needed to get something off their chest and they were using the other person to aim their rant at. On the other hand, there are those interactions that leave both sides feeling energized. It’s a shared experience where both parties seem to benefit.&lt;/p&gt;
@@ -354,7 +354,7 @@ Fast forward to July 23, 2023 - I am writing today hours after completing my fir
 &lt;h3 id=&quot;solitude--loneliness&quot;&gt;Solitude ≠ Loneliness&lt;/h3&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: &amp;lt;&amp;gt;&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: I spend a lot of time in my own company. It used to bother me before, but now I thrive on it. It gives me quality focus time that I must utilize to advance my vocation.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Is it possible to be in solitude and not feel any sense of loneliness? This is a thought I’ve been grappling with for a while, and I’m really interested in exploring it further. A lot of the times I’ve seen people spending time with each other, even though they are not very fond of them. I think this is likely because they can’t bear to be by themselves. Shouldn’t we work on being better friends to ourselves? If we can’t bear alone time, there must be some internal dissonance we’re fleeing from. We’re distracting ourselves with external stimuli - be it mindless scrolling, TV, drugs, or alcohol.&lt;/p&gt;
@@ -370,7 +370,7 @@ Fast forward to July 23, 2023 - I am writing today hours after completing my fir
 &lt;h3 id=&quot;lifelong-learning&quot;&gt;Lifelong learning&lt;/h3&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;:&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: Learning is a habit for me. If I’m not doing this every day, then I’m just another wannabe.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;A thought I’ve been sitting with is the importance of constant learning in our careers. The practice was easier in school with all the externalities driving us towards meeting our deadlines. It’s a bit different in the workplace. Unless you make an intentional effort to keep learning and upskilling, there is inevitably going to be a time when you feel jaded, left behind, and hopeless. You begin to doubt yourself and the innate abilities that helped you get the job in the first place. That is why I have begun to take more initiative with pursuing certifications and updating my skills outside of the projects I am currently working on at EY. An area that has piqued my curiosity is the topic of cloud computing. I am fascinated by how simple systems are able to interlink to create these complex platforms that businesses are able to run their operations on. Over this past decade, there has been a seismic shift from the traditional data center model to the cloud. I have enjoyed learning about the fundamentals. Since November of last year, I have passed the beginner level exams prepared by AWS, Azure and Google Cloud. A month back, I also passed the FinOps certified practitioner examination. With this shift to the cloud, companies have to rethink their finances and how they should appropriately budget their IT spend. Cloud follows a variable expense model, and, without the appropriate guardrails in place, there is a high likelihood of significant cost overruns. This disincentivizes organizations from transforming and can stifle the pace of innovation.&lt;/p&gt;
@@ -392,7 +392,7 @@ Fast forward to July 23, 2023 - I am writing today hours after completing my fir
 &lt;h3 id=&quot;the-importance-of-showing-up&quot;&gt;The importance of showing up&lt;/h3&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: &amp;lt;&amp;gt;&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: Kind of repeating myself here but see this as another hype message.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;An aspect of my life that I’ve made a concerted effort to change in my ability to stay disciplined towards executing the tasks I’ve set for myself. In an effort to do so - in January of this year, I began logging my daily habits in an app called ‘Habit’. I’ve been focusing on working out, reading, learning (tech), meditating, playing the piano, and abstaining from watching TV - a massive time drain.
@@ -419,7 +419,7 @@ I’ve physically transformed, got a job offer from a prestigious company, compl
 &lt;h3 id=&quot;on-journaling-itself&quot;&gt;On journaling itself&lt;/h3&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: &amp;lt;&amp;gt;&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;Context&lt;/em&gt;: This helps me to stay motivated as I try to write more consistently. Also gives me ideas on the kinds of things I could write about.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;I started a practice in late July 2023 of daily morning pages. Each day, I aim to write about 2 pages of whatever comes to my mind. In the process, I am learning to articulate my thoughts clearly and have the logic hold up when re-read. I got this idea from Tim Ferriss on his YouTube channel, where he spoke about the importance of writing and its potential to impact just about every aspect of one’s life. I have always wanted to improve my ability to write, cogently express my thoughts about a particular topic, and share it with my readers.&lt;/p&gt;
@@ -432,6 +432,6 @@ I’ve physically transformed, got a job offer from a prestigious company, compl
 
 &lt;p&gt;I’m creating this blog for myself. I won’t mind if nobody ever looks at it. That’s fine. What matters is the soul with which I put my work out. How the world perceives it is the world’s problem.&lt;/p&gt;
 
-&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing Thoughts&lt;/h2&gt;
+&lt;h2 id=&quot;if-youve-made-it-this-far&quot;&gt;If you’ve made it this far…&lt;/h2&gt;
 
-&lt;p&gt;Congratulate the reader on making it this far. End however you like.&lt;/p&gt;</content><author><name></name></author><summary type="html">A ritual that has aided my mental health in a profound way</summary></entry></feed>
+&lt;p&gt;Congratulations! You made it to the end of this blog post. If there’s one thing I can pass to you, it is this: writer’s block is a myth. It’s nothing but procrastination. You may have unrealistic expectations of the quality of your writing. It denies you the freedom of sucking at something. You’ve seen my writing – I’m no genius. It’s average quality at best, but I’ve gotten much better. And that’s the point. If you put in the reps, you will see benefits. And now I shall abruptly end this monologue. Goodbye!&lt;/p&gt;</content><author><name></name></author><summary type="html">A ritual that has aided my mental health in a profound way</summary></entry></feed>
