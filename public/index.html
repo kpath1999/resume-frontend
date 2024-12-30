@@ -1,57 +1,197 @@
-<!DOCTYPE html>
-<html lagn="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width"/>
-        <meta name="description" content="Simple page used as a web site placeholder."/>
-        <meta name="author" content="Kausar Patherya"/>
-        <title>New website coming soon!</title>
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-        <style>
-            body {
-                margin: 0;
-                background-color: #e3e3e4;
-            }
-            header {
-                background-color: LightSteelBlue;
-                margin: 0;
-                padding-top: 3%;
-                padding-bottom: 3%;
-                text-align: center;
-                font-size: 200%;
-            }
-            .greeting {
-                margin: 5%;
-                min-height: 10%;
-            }
-            footer {
-                position: fixed;
-                bottom: 0;
-                font-size: 65%;
-                width: 95%;
-                text-align: right;
-                padding-bottom: 2em;
-            }
-        </style>
-    </head>
+    <title>Kausar Patherya</title>
 
-    <body>
-        <header>Hello, I'm Kausar!</header>
-        <p class="greeting">
-            Welcome to my little space on the web. If I do something cool, I'll make sure to add it on here.
-            
-            For now, this exists so that I can stop scalpers from picking up my domain :)
+    <meta name="author" content="Kausar Patherya">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    
+  </head>
 
-            Reach me at kausarpatheryaa@gmail.com
+  <body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <p class="name" style="text-align: center;">
+                  Kausar Patherya
+                </p>
+                <p>
+                  I'm a graduate student at Georgia Tech, where I am working at the intersection of machine learning and robotics. This website was created to share my work and crystallize my thoughts through writing.
+                </p>
+                <p>
+                  Nothing on here is unique. It is an amalgamation of all that I've read so far, helping me observe this world of ours through fresh eyes. If I happen to see far, it's because I stand on the shoulders of giants.
+                </p>
+                <p>
+                  Beyond the classroom, you might find me at a CrossFit gym, in quiet meditation, lost in a good book, or coaxing melodies from piano keys.
+                </p>
+                <p>May all beings be happy &#127803;</p>
+              </td>
+              <td style="padding:2.5%;width:40%;max-width:40%">
+                <a href="images/KausarPatherya.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/KausarPatherya.jpg" class="hoverZoomLink"></a>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+              <td style="padding:20px;width:100%;vertical-align:middle">
+                <h2>Blog</h2>
+                <p>
+                  I enjoy writing about technology, fitness, philosophy, history, and drawing connections between seemingly different fields. I'm fascinated by AI and where it can lead our civilization. I hope to be part of this revolution, contributing my own little verse.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+    <tr onmouseout="standup_posture_stop()" onmouseover="standup_posture_start()">
+      <td style="padding:20px;width:25%;vertical-align:middle">
+        <div class="one" style="display:flex; justify-content:center; align-items:center; height:90%;">
+          <div class="two" id='standup_posture_image'><video  width=100% muted autoplay loop>
+          <source src="images/hri/situp-posture.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video></div>
+          <img src='images/hri/situp-posture.png' width=90%>
+        </div>
+        <script type="text/javascript">
+          function standup_posture_start() {
+            document.getElementById('standup_posture_image').style.opacity = "1";
+          }
+
+          function standup_posture_stop() {
+            document.getElementById('standup_posture_image').style.opacity = "0";
+          }
+          standup_posture_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+        <a href="/2024/12/09/situp-posture-hri/index.html" target = "_blank" rel = "noopener noreferrer">
+          <span class="papertitle">SIT-UP: Smart Integrated Technology for Upright Posture</span>
+        </a>
+        <br>
+        Rishabh Goel,
+        Anwesha Gorantla,
+        Justin Wit
+        <br>
+        <em>CS7633</em>, Fall 2024
+        <br>
+        <a href="https://github.com/kpath1999/hri-situp-f24" target = "_blank" rel = "noopener noreferrer">code</a>
+        /
+        <a href="/images/hri/hri-final-presentations.pdf" target = "_blank" rel = "noopener noreferrer">slides</a>
+        /
+        <a href="/refs/hri-posture.txt" target = "_blank" rel = "noopener noreferrer">references</a>
+        <p>
+          A novel approach to posture correction by integrating computer vision with vibratory and auditory feedback, utilizing a height-adjustable standing desk capable of autonomous adjustments.
         </p>
-        <footer>Site: <span id="domain"></span></footer>
-    </body>
+      </td>
+    </tr>
 
-    <script>
-        var theDomain = document.domain;
-if (theDomain === "")
-    theDomain = "local";
+    <tr onmouseout="robotarm_stop()" onmouseover="robotarm_start()">
+      <td style="padding:20px;width:25%;vertical-align:middle">
+        <div class="one" style="justify-content:center; align-items:center; height:100%;">
+          <div class="two" id='robotarm_image'><video  width=100% muted autoplay loop>
+          <source src="images/advml/robot-arm.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video></div>
+          <img src='images/advml/robot-arm.png' width=100%>
+        </div>
+        <script type="text/javascript">
+          function robotarm_start() {
+            document.getElementById('robotarm_image').style.opacity = "1";
+          }
 
-document.getElementById("domain").textContent = theDomain;
-</script>
+          function robotarm_stop() {
+            document.getElementById('robotarm_image').style.opacity = "0";
+          }
+          robotarm_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+        <a href="\2024\placeholder.html" target = "_blank" rel = "noopener noreferrer">
+          <span class="papertitle">Mastering Robot Manipulation with PyBullet</span>
+        </a>
+        <br>
+        Arjun Bansal,
+        Ruchi Patel,
+        Ayushi Rajpoot
+        <br>
+        <em>CSE6243</em>, Fall 2024
+        <br>
+        <a href="https://github.com/kpath1999/robot-arm-f24" target = "_blank" rel = "noopener noreferrer">code</a>
+        /
+        <a href="/images/advml/advml-final-presentations.pdf" target = "_blank" rel = "noopener noreferrer">slides</a>
+        /
+        <a href="/refs/advml-posture.txt" target = "_blank" rel = "noopener noreferrer">references</a>
+        <p>
+          This blog post compares three reinforcement learning algorithms - A2C, DQN, PPO - to the task of robotic arm manipulation for pick-and-place tasks using the Kuka environment simulation on PyBullet.
+        </p>
+      </td>
+    </tr>
+
+
+    <tr onmouseout="bus_stop()" onmouseover="bus_start()">
+      <td style="padding:20px;width:25%;vertical-align:middle">
+        <div class="one" style="display:flex; justify-content:center; align-items:center; height:100%;">
+          <div class="two" id='bus_image'><video  width=100% height=100% muted autoplay loop>
+          <source src="images/jumping-bus-vid.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video></div>
+          <img src='images/jumping-bus.jpg' width="170">
+        </div>
+        <script type="text/javascript">
+          function bus_start() {
+            document.getElementById('bus_image').style.opacity = "1";
+          }
+
+          function bus_stop() {
+            document.getElementById('bus_image').style.opacity = "0";
+          }
+          bus_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+        <a href="\2024\placeholder.html" target = "_blank" rel = "noopener noreferrer">
+			<span class="papertitle">Sting-Sense: Bus Analytics with Inertial Sensors
+</span>
+        </a>
+        <br>
+        Yu Wang,
+        Drumil Deliwala,
+        Ashutosh Dhekne
+        <br>
+        <em>CS8803</em>, Fall 2024
+        <br>
+        <a href="https://github.com/kpath1999/gtbusmap" target = "_blank" rel = "noopener noreferrer">code</a>
+        /
+        <a href="https://www.loom.com/share/9c2dda40251b46d8b28de9dce49a4cf4?sid=eeb687d6-37e4-4dbd-8ed8-e34b108479f3" target = "_blank" rel = "noopener noreferrer">video</a>
+        /
+        <a href="/refs/mci-posture.txt" target = "_blank" rel = "noopener noreferrer">references</a>
+        <p>
+          Sting-Sense is a bus analytics system, specifically tailored to provide visibility into Georgia Tech bus behavior at different times of the day. The system utilizes inertial sensors and GPS technology to collect and analyze data from four bus routes.
+        </p>
+      </td>
+    </tr>
+            
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:0px">
+                <br>
+                <p style="text-align:right;font-size:small;">
+                  <script src="visitcounter.js"></script>
+                  Website design by <a href="https://github.com/jonbarron/jonbarron_website" target="_blank" rel="noopener noreferrer">Jon Barron</a>. Visit count: <strong><span class="visits"></span></strong> and counting!
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>

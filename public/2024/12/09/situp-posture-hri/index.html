@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SIT-UP: Smart Integrated Technology for Upright Posture</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="I like to write, design, code, and share some of the cool projects I'm working on. I try not to be boring.">
+    <link rel="canonical" href="https://www.kausarpatherya.com/2024/12/09/situp-posture-hri/">
+    <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Kausar Patherya posts" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-3698471-23', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+
+  <div class="wrap">
+
+    <div style="float:left; margin-top:10px; margin-right:10px;">
+    <a href="/feed.xml">
+      <img src="/assets/rssicon.svg" width="40">
+    </a>
+    </div>
+
+    <a class="site-title" href="/">Kausar Patherya</a>
+    
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        
+          
+        
+          <a class="page-link" href="/about/">About</a>
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post">
+
+  <header class="post-header">
+    <h1>SIT-UP: Smart Integrated Technology for Upright Posture</h1>
+    <p class="meta">Dec 9, 2024</p>
+  </header>
+
+  <article class="post-content">
+  <p>The SIT-UP system represents a novel approach to posture correction by integrating computer vision with vibratory and auditory feedback, utilizing a height-adjustable standing desk capable of autonomous adjustments. It aims to promote healthier postural habits while minimizing disruption to users’ workflows. The study evaluated the system’s ability to improve posture through a user study with three groups: control, passive and active interventions. Adjusting the desk height when bad posture was detected proved to be an effective strategy. Future research could focus on long-term studies and personalized calibration for individuals with specific needs.</p>
+
+<p><strong>Introduction</strong>. Posture is how you hold your body. Humans did not evolve to sit for hours in unnatural positions working at a desk. As people tire mentally, they pay less attention to their posture. Working for long hours can cause unconscious slouching which reinforces poor postural habits. Beyond poor aesthetics, slouching or slumping can misalign the skeletal system, wear at your spine, cause breathing issues, and many other problems. It is in your best interest to maintain good posture.</p>
+
+<p><strong>Related work</strong>. Our lifestyles don’t make this any easier. According to a recent study, 80% of the jobs in the U.S. involve prolonged computer or mobile device use. The risks linked to sedentary behavior are now ever present. Numerous posture correction systems have surfaced, including wearable sensors and ‘smart chairs’, but none have taken off. Challenges such as cognitive load and workflow disruptions continue to persist. There is a need for minimally disruptive, adaptive systems that can be integrated into our daily workflows. Our system promotes healthier postural habits without compromising productivity.</p>
+
+<p>SIT-UP has three core components:</p>
+
+<ol>
+  <li><strong>Computer vision system</strong>: Built using the MediaPipe Pose library, a camera positioned in front and to the side of the user captures real-time posture data.</li>
+  <li><strong>Feedback mechanisms</strong>: Vibrations and auditory feedback (ding sounds) act as prompts for users to correct their posture.</li>
+  <li><strong>Height-adjustable desk</strong>: Equipped with linear actuators and a control unit.</li>
+</ol>
+
+<div style="text-align: center;">
+    <img src="/assets/hri/side-front.png" width="70%" />
+    <em><br />Fig. 1. <b>Posture Measurements Collected:</b> Side and front profiles.</em>
+</div>
+
+<h3 id="experimental-design">Experimental Design</h3>
+
+<p>Fifteen participants were recruited and divided into three groups:</p>
+
+<ul>
+  <li><strong>Control group</strong>: A conventional setup without any interventions.</li>
+  <li><strong>Passive group</strong>: Received vibrations and sounds delivered via push notifications, triggering after 10 seconds of continuous postural deviation. The sequence of the two modalities was randomized to eliminate order effects.</li>
+  <li><strong>Active group</strong>: The desk moved up if the user leaned forward and the desk height was below the maximum threshold. Conversely, the desk moved down if the user leaned back and the desk height was above the minimum threshold.</li>
+</ul>
+
+<p>Each session lasted for 40 minutes, consisting of a 5-minute calibration period, 30 minutes of the user working on their laptop, and a 5-minute post-session evaluation. During the first five minutes, a pre-study questionnaire was administered to gather user perceptions and experiences.</p>
+
+<ul>
+  <li><strong>Demographic information</strong>: Age, gender, occupation, hours spent at a computer daily.</li>
+  <li><strong>Baseline posture and comfort (1-5 scale)</strong>: How would you rate your current posture while working? How comfortable do you feel during prolonged computer use?</li>
+  <li><strong>Expectations (free response)</strong>: What do you expect from this posture correction system?</li>
+</ul>
+
+<p>Posture data was continuously logged using the CV system. It detected postural deviations using features such as head tilt, shoulder alignment, and spinal curvature. When deviations exceeded a 10-second threshold, one of the interventions – desk, vibration, sound – was triggered.</p>
+
+<p>Once the 35-minute mark passed, a few wrap-up questions were asked:</p>
+
+<ul>
+  <li><strong>Perceived effectiveness (1-5)</strong>: How effective do you think the system was in improving your posture?</li>
+  <li><strong>Perceived productivity (1-5)</strong>: How much more or less productive did you feel while using the system?</li>
+  <li><strong>Perceived intelligence (1-5)</strong>: How smart or adaptive did you find the system?</li>
+  <li><strong>Comfort (1-5)</strong>: How comfortable did you feel during the session?</li>
+  <li><strong>Bodily fatigue (1-5)</strong>: How fatigued do you feel compared to before using the system?</li>
+  <li><strong>Intrusiveness (1-5)</strong>: Did you find the system intrusive to your workflow?</li>
+  <li><strong>Open-ended feedback</strong>: What did you like most about the system? What improvements would you suggest for future studies?</li>
+</ul>
+
+<h3 id="computer-vision-system">Computer Vision System</h3>
+
+<p>A dual-camera system uses one camera positioned in front and another at the side.</p>
+<iframe width="720" height="400" src="https://www.youtube.com/embed/W3mUOfoK-hg?si=PbCySZheUHO1ZvdU&amp;start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+<p>The front camera measures leaning and level misalignment of shoulders. The side camera identifies head posture and slouching. Posture is evaluated every 0.5 seconds and key metrics are logged, including:</p>
+
+<ul>
+  <li><strong>Torso inclination</strong>: Angle between hip and shoulder in 3D space.</li>
+  <li><strong>Spine length</strong>: 3D distance between hip and shoulder.</li>
+  <li><strong>Neck angle</strong>: Relative angle between ear, shoulder, and hip coordinates.</li>
+  <li><strong>Shoulder level</strong>: Difference in y-coordinates of left and right shoulders.</li>
+  <li><strong>Upper body lean</strong>: Difference in mean z-values between ear and shoulder.</li>
+  <li><strong>Neck_</strong>: Normalized neck angle based on thresholded neck_min and neck_max.</li>
+  <li><strong>Torso_</strong>: Normalized torso inclination based on thresholded torso_min and torso_max.</li>
+  <li><strong>Level_</strong>: Normalized level based on level_min and level_max.</li>
+  <li><strong>Lean_</strong>: Normalized lean based on lean_min and lean_max.</li>
+  <li><strong>Front Score</strong>: 40 * (1 - level_) + 60 * (1 - lean_)</li>
+  <li><strong>Side Score</strong>: 70 * neck_ + 30 * torso_</li>
+</ul>
+
+<p>A composite posture score was calculated as: <code class="language-plaintext highlighter-rouge">55 * neck_ + 40 * torso_ + 3 * (1 – lean_) + 2 * (1 – level_)</code>. The weights prioritize neck and torso inclinations (55% and 40%, respectively). These have a stronger correlation with postural health. Lean and level are assigned lower weights (3% and 2%, respectively) as they are typically less critical. This score reflects the frequency and duration of poor posture instances, the magnitude of postural deviations, and the time spent in optimal posture ranges.</p>
+
+<p>Interventions occur only when bad posture persists beyond a defined threshold and a 30-second cooldown period has elapsed. This prevents overcorrection while also addressing continuous bad posture. Our professor, Sonia Chernova, recommended we exhaustively log all posture data (“log the hell out of it”, to be precise). This allowed us to measure several behaviors, some of which are included below:</p>
+
+<ul>
+  <li><strong>Frequency of poor posture</strong>: Count instances where composite_score &lt; 50</li>
+  <li><strong>Duration of poor posture</strong>: Tracked by bad_posture_duration variable</li>
+  <li><strong>Magnitude of deviations</strong>: Captured in the individual metrics (neck_, torso_, lean_, level_)</li>
+  <li><strong>Time in optimal range</strong>: Calculate percentage of time composite_score &gt;= 50</li>
+  <li><strong>Vibration cues</strong>: Count of sent_vibration</li>
+  <li><strong>Sound cues</strong>: Count of sent_sound</li>
+  <li><strong>Desk adjustments</strong>: Count of moved_desk (not implemented yet)</li>
+  <li><strong>Response time</strong>: Calculate time between an intervention (sent_vibration/sent_sound) and when composite_score returns to &gt;=50</li>
+  <li><strong>Posture stability</strong>: Calculate standard deviation of composite_score over time windows (e.g., 5-minute intervals)</li>
+  <li><strong>Intervention effectiveness</strong>: Compare average_composite_score for 1 minute before and after each intervention</li>
+  <li><strong>Posture breakdown</strong>: Percentage of time spent in good (score &gt; 75), moderate (50-75), and poor (&lt;50) posture ranges</li>
+  <li><strong>Spine length variability</strong>: Track changes in spine_length over time to assess slouching or stretching</li>
+  <li><strong>Posture recovery rate</strong>: Measure how quickly composite_score improves after dropping below 50</li>
+  <li><strong>Intervention necessity</strong>: Track the frequency of interventions over time to see if users improve naturally</li>
+</ul>
+
+<p>The original control board of a commercial standing desk was replaced with an Arduino Nano BLE board and a motor driver. The motor driver uses an H-bridge configuration, which controls the desk’s direction and speed. The Arduino Nano BLE board sends signals to the H-bridge to control the direction of the motor, while the speed is preset using the variable resistor. This setup allows for precise and gradual height adjustments based on the user’s posture.</p>
+
+<h3 id="results">Results</h3>
+
+<p>Far from ideal, but only a single user was in the control group. We were not able to recruit too many participants for a pilot study of this nature. This user’s measurements were perturbed and averaged across 5 instances. The composite scores were relatively stable but exhibited a slightly downward trend as time progressed. This decline can be attributed to the natural fatigue associated with prolonged computer use.</p>
+
+<div style="text-align: center;">
+    <img src="/assets/hri/control_composite_score_over_time.png" width="60%" />
+    <em><br />Fig. 2. <b>Control Group:</b> A single user was treated as the baseline, and measurements were perturbed and averaged across five instances. The control group achieved an overall mean composite score of 61.96 and a standard deviation of 16.98, with a total of 18,101 data points collected.</em>
+</div>
+
+<p>The passive group (n=5) exhibited more pronounced variations in posture scores, with lower mean values and wider variance bands compared to the control group. This reflects the diversity in user responsiveness to varying stimuli. Some users appeared highly responsive to auditory cues, while others barely noticed and/or struggled to interpret the feedback.</p>
+
+<div style="text-align: center;">
+    <img src="/assets/hri/passive_composite_score_over_time.png" width="60%" />
+    <em><br />Fig. 3. <b>Passive Group:</b> With the passive group, the mean is lower and the variance bands are larger due to a diverse user pool. The passive group achieved an overall mean composite score of 53.65 and a standard deviation of 28.55, with a total of 17,845 data points collected.</em>
+</div>
+
+<p>The individual user graphs reveal deeper insights. In the left panel, the posture score for a specific user showed a noticeable decline during the vibration phase. This user confessed that the vibrations were far too subtle. In contrast, the right panel shows another user with consistently high posture scores. Either they responded well to both modalities or they have naturally great posture. It’s hard to say. This is what makes it challenging to determine which intervention – vibration or sound – is more effective.</p>
+
+<div style="text-align: center;">
+    <img src="/assets/hri/combined_posture_data.png" width="60%" />
+    <em><br /><br />Fig. 4. <b>Passive Group User Analysis:</b> (Left) User with a drop in posture score during the vibration phase. (Right) User with consistently good posture across both modalities.</em>
+</div>
+
+<p>Box plots were created for this very purpose. The median score for sound is slightly higher than vibration, suggesting that sound may be marginally more effective at prompting behavior change.</p>
+
+<div style="text-align: center;">
+    <img src="/assets/hri/intervention_effectiveness.png" width="60%" />
+    <em><br /><br />Fig. 5. <b>Effectiveness of Intervention Modalities:</b> Side-by-side box plots comparing the effectiveness of sound and vibration feedback for posture correction. Sound was found to be slightly more effective, with higher median scores compared to vibration.</em>
+</div>
+
+<p>With the active group (n=5), the mean was slightly higher, and the variance bands were narrower than the passive group. The desk height adjustments were more effective than the passive interventions. It turns out that the mean score was lower than the control group likely due to the novel medium and/or user differences.</p>
+
+<div style="text-align: center;">
+    <img src="/assets/hri/active_composite_score_over_time.png" width="60%" />
+    <em><br /><br />Fig. 6. <b>Active Group:</b> With the active group, the mean is slightly higher and the variance bands are narrower than the passive group. The active group achieved an overall mean composite score of 55.41 and a standard deviation of 18.81, with a total of 20,181 data points collected.</em>
+</div>
+
+<p><strong>Qualitative feedback</strong>. A post-session questionnaire, adapted from the User Experience Questionnaire (UEQ), assessed effectiveness, intelligence, comfort, and fatigue with the SIT-UP system. Users in both the passive and active groups perceived the system as significantly more effective and intelligent compared to those in the control group. The productivity score showed minimal improvement, meaning users did not gain any superpowers while sitting upright. Comfort, fatigue and intrusiveness were rated less favorably in both intervention groups.</p>
+
+<div style="text-align: center;">
+    <img src="/assets/hri/qual-feedback.png" width="60%" />
+    <em><br /><br />Table 1. <b>Post-study questionnaire:</b> Survey results from the three experimental groups.</em>
+</div>
+
+<p><strong>Statistical tests</strong>. Four hypotheses were tested comparing mean composite scores during and after passive and active interventions to baseline. Wilcoxon paired statistical comparisons were conducted. tl;dr: No statistically significant conclusions. Here’s a rhyme:</p>
+
+<p><em>Beeps and buzzes, a posture quest,</em><br />
+<em>Stats said “Meh” to our behest.</em><br />
+<em>P-values danced, but none impressed,</em><br />
+<em>Our backs remained a slouchy mess.</em></p>
+
+<p>The study highlights the complexity of posture intervention and the need for further research in this area.</p>
+
+<p><strong>Limitations</strong>. A major challenge was defining “good posture,” which varies among individuals. It is hard to mathematically codify and requires careful calibration based on the person being studied. A few study design constraints crept up too. Lack of within-comparison testing limited the direct comparison of participant responses. Participants may “try too hard” due to the awareness of being studied (Hawthorne effect). Script interruptions occurred occasionally due to a power supply issue, which were mitigated by resuming the study as soon as a team member found out. The vibration feedback method (using a phone instead of integrating it into a chair) was not ideal. The sample size was too small, especially the single-person control group. And lastly, the short-term nature of this study was a key drawback. Behavioral shifts only become more apparent if the system’s impact is assessed over a longer horizon, say, a month.</p>
+
+<p><strong>Synthesizing it all</strong>. If we learned anything, it is that building a posture correction system is complicated. Without intervention, posture tends to worsen over time, emphasizing the need for some external support. Passive interventions (sounds or vibrations) show mixed results. Some people respond better to certain types of reminders, suggesting that a one-size-fits-all approach may not work for everyone. A personalized, adaptive system could be more effective. Active desk adjustments seem to work better. However, frequent desk adjustments, while helpful, may mess with a user’s concentration. The key takeaway is that future posture correction systems should aim to balance effectiveness with user comfort.</p>
+
+<p><strong>Coda</strong>. This project was conducted as part of the Human-Robot Interaction class at Georgia Tech. Dr. Sonia Chernova supervised this project, and her TAs, Maithili and Karthik, helped facilitate it.</p>
+
+  </article>
+
+  <!-- mathjax -->
+  
+  
+  <!-- disqus comments -->
+ 
+  
+</div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrap">
+
+    <!-- <h2 class="footer-heading">Kausar Patherya</h2> -->
+
+    <div class="footer-col-1 column">
+      <ul>
+        <li>Kausar Patherya</li>
+        <!-- <li><a href="mailto:"></a></li> -->
+      </ul>
+    </div>
+
+    <div class="footer-col-2 column">
+      <ul>
+        
+        
+        <li>
+          <a href="https://www.youtube.com/@gatechai">
+          <span class="icon youtube">
+          <svg version="1.1" class="youtube-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" width="16" height="16" enable-background="new 0 0 16 16" xml:space="preserve">
+          <path fill="#C2C2C2" d="M15.8,4.8c-0.2-1.3-0.8-2.2-2.2-2.4C11.4,2,8,2,8,2S4.6,2,2.4,2.4C1,2.6,0.3,3.5,0.2,4.8C0,6.1,0,8,0,8 s0,1.9,0.2,3.2c0.2,1.3,0.8,2.2,2.2,2.4C4.6,14,8,14,8,14s3.4,0,5.6-0.4c1.4-0.3,2-1.1,2.2-2.4C16,9.9,16,8,16,8S16,6.1,15.8,4.8z M6,11V5l5,3L6,11z"/>
+          </svg>
+          </span>
+          <span class="username">gatechai</span>
+          </a>
+          </li>
+          <li>
+          <a href="https://creators.spotify.com/pod/show/gatechai">
+          <span class="icon spotify">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#C2C2C2" class="bi bi-spotify" viewBox="0 0 16 16"> <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.5.5 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288"/> </svg>
+          <!-- <svg version="1.1" class="spotify-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" width="16" height="16" enable-background="new 0 0 16 16" xml:space="preserve">
+          <path fill="#C2C2C2" d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M11.7,11.5c-0.1,0.2-0.3,0.3-0.5,0.3 c-0.1,0-0.2,0-0.3-0.1C9.6,11.1,8.2,10.8,6.8,11c-1.3,0.1-2.5,0.5-3.7,1c-0.2,0.1-0.5,0-0.7-0.2c-0.1-0.2,0-0.5,0.2-0.7 c1.3-0.6,2.7-1,4.2-1.1c1.6-0.2,3.2,0.2,4.6,0.9C11.6,11.1,11.7,11.3,11.7,11.5z M12.7,9.3c-0.1,0.2-0.4,0.4-0.6,0.4 c-0.1,0-0.2,0-0.3-0.1c-1.6-0.9-3.4-1.3-5.2-1.2c-1.6,0.1-3.2,0.6-4.6,1.4c-0.3,0.1-0.6,0-0.8-0.2c-0.1-0.3,0-0.6,0.2-0.8 c1.6-0.9,3.3-1.4,5.1-1.5c2-0.1,4,0.3,5.8,1.3C12.7,8.7,12.8,9.1,12.7,9.3z M13.7,6.9c-0.2,0.3-0.5,0.4-0.8,0.4 c-0.1,0-0.2,0-0.3-0.1C10.6,6,8.4,5.6,6.2,5.7C4.3,5.9,2.4,6.4,0.7,7.3c-0.3,0.2-0.7,0-0.9-0.3C-0.3,6.7-0.2,6.3,0.2,6.1 c2-1,4.1-1.6,6.2-1.8c2.5-0.2,4.9,0.3,7.1,1.5C13.8,6,13.9,6.5,13.7,6.9z"/>
+          </svg> -->
+          </span>
+          <span class="username">gatechai</span>
+          </a>
+          </li>
+      </ul>
+    </div>
+
+    <div class="footer-col-3 column">
+      <p class="text">I like to write, design, code, and share some of the cool projects I'm working on. I try not to be boring.</p>
+    </div>
+
+  </div>
+
+</footer>
+
+    </body>
+</html>

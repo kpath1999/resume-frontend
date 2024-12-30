@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lagn="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width"/>
+        <meta name="description" content="Simple page used as a web site placeholder."/>
+        <meta name="author" content="Kausar Patherya"/>
+        <title>New blog post coming soon!</title>
+
+        <style>
+            body {
+                margin: 0;
+                background-color: #e3e3e4;
+            }
+            header {
+                background-color: LightSteelBlue;
+                margin: 0;
+                padding-top: 3%;
+                padding-bottom: 3%;
+                text-align: center;
+                font-size: 200%;
+            }
+            .greeting {
+                margin: 5%;
+                min-height: 10%;
+            }
+            footer {
+                position: fixed;
+                bottom: 0;
+                font-size: 65%;
+                width: 95%;
+                text-align: right;
+                padding-bottom: 2em;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>Hey there!</header>
+        <p class="greeting">
+            Welcome to my little space on the web. If I do something cool, I'll make sure to add it on here.
+            
+            For now, this blog post is a work in progress.
+        </p>
+        <footer>Site: <span id="domain"></span></footer>
+    </body>
+
+    <script>
+        var theDomain = document.domain;
+if (theDomain === "")
+    theDomain = "local";
+
+document.getElementById("domain").textContent = theDomain;
+</script>
+</html>
