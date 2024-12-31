@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mastering Robotic Arm Manipulation with Deep Reinforcement Learning</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="I like to write, design, code, and share some of the cool projects I'm working on. I try not to be boring.">
+    <link rel="canonical" href="https://www.kausarpatherya.com/2024/12/08/robot-arm-advml/">
+    <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Kausar Patherya posts" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-3698471-23', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- KaTeX script -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+          ]
+        });
+      });
+    </script>
+
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+
+  <div class="wrap">
+
+    <div style="float:left; margin-top:10px; margin-right:10px;">
+    <a href="/feed.xml">
+      <img src="/assets/rssicon.svg" width="40">
+    </a>
+    </div>
+
+    <a class="site-title" href="/">Kausar Patherya</a>
+    
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        
+          
+        
+          
+        
+          
+        
+          <a class="page-link" href="/about/">About</a>
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post">
+
+  <header class="post-header">
+    <h1>Mastering Robotic Arm Manipulation with Deep Reinforcement Learning</h1>
+    <p class="meta">Dec 8, 2024</p>
+  </header>
+
+  <article class="post-content">
+  <p>Robotic manipulation, combining robotics and machine learning, aims to develop adaptive systems for tasks like grasping and assembling. This project applies reinforcement learning (RL) algorithms to train a robotic arm for pick-and-place operations using the PyBullet physics engine. Advantage Actor Critic (A2C), Deep-Q-Networks (DQN), and Proximal Policy Optimization (PPO) are evaluated and compared in terms of sample efficiency, stability, and task completion rates.</p>
+
+<p><strong>Overview</strong>. The Kuka environment in PyBullet simulates a robotic arm for pick-and-place tasks with realistic physics. It is open-source, models real-world systems, and balances complexity with tractability for RL research. This environment serves as a testbed to compare RL approaches like A2C, PPO, and DQN (value vs. policy, on vs. off policy), helping researchers choose algorithms for similar robotics tasks and inform future development.</p>
+
+<p>The agent can choose from 7 discrete actions:</p>
+
+<ol>
+  <li>Move in x-direction (+/-).</li>
+  <li>Move in y-direction (+/-).</li>
+  <li>Adjust vertical angle (up/down).</li>
+  <li>Do nothing.</li>
+</ol>
+
+<p>Velocity for each direction is equal. A <em>height hack</em> is leveraged, where the gripper automatically moves down for each action. As part of the reward structure, the agent receives a reward of +1 if an object is lifted above a height of 0.2 at the end of the episode. Lastly, the environment provides (48, 48, 3) RGB images as input, making way for convolutional neural networks (CNNs) to decode an optimal policy through purely visual input.<sup>1</sup></p>
+
+<h3 id="literature-survey">Literature Survey</h3>
+
+<p><strong>Advantage Actor Critic (A2C)</strong>. Combines value-based and policy-based approaches, making it suitable for discrete and continuous action spaces.<sup>2</sup> A2C learns a value function and a policy simultaneously, potentially leading to more stable and efficient learning in complex, high-dimensional state spaces. It employs a shared network architecture with convolutional layers feeding into separate policy and value function outputs. The inclusion of an entropy regularization term improves exploration by discouraging premature convergence to suboptimal policies.</p>
+
+<p><strong>Deep-Q-Networks (DQN)</strong>. Learns control policies from high-dimensional sensory input, handling discrete policies well.<sup>3</sup> DQN’s use of experience replay and target networks addresses stability issues in deep RL. However, its limitation to discrete actions might restrict fine-grained control needed for precise robotic manipulation. DQN tends to overestimate action values, which could lead to suboptimal policy selection.</p>
+
+<p><strong>Proximal Policy Optimization (PPO)</strong>. Balances ease of implementation, sample complexity, and performance.<sup>4</sup> Its ability to perform multiple epochs of minibatch updates from the same trajectory makes it sample-efficient. PPO’s conservative policy update mechanism leads to more stable learning, preventing drastic changes that might be detrimental in sensitive manipulation scenarios. It uses Generalized Advantage Estimation (GAE) to reduce variance in policy gradient estimates. The clipped surrogate objective provides a pessimistic estimate of the policy’s performance, potentially leading to more robust policies.</p>
+
+<p>Each algorithm presents unique strengths and challenges for the Kuka arm control task. A2C offers versatility and efficient learning from visual data. DQN excels in handling discrete actions and visual inputs but may struggle with fine-grained control. PPO provides stable learning and optimization for fine-grained control, making it a strong candidate for this simulation.</p>
+
+<p><strong>Methodology</strong>. We hypothesize that PPO will excel due to its effectiveness in high-dimensional continuous action spaces (H1), while DQN may struggle with fine-grained control (H2), and A2C might underperform due to its synchronous nature (H3). The algorithms are evaluated based on: (a) sample efficiency: measured by learning speed and performance relative to training steps; (b) stability: assessed through consistency in policy improvements and value estimations; (c) task completion rates: determined by successful object manipulations in the Kuka environment. This comparative approach allows us to identify the strengths and weaknesses of each algorithm in the context of robotic manipulation tasks.</p>
+
+<h3 id="algorithm-implementation">Algorithm Implementation</h3>
+
+<p><strong>Actor-Critic (A2C)</strong>. A2C combines policy gradient and value-based learning, making it suitable for continuous action spaces. The framework consists of an actor that learns the policy $ \pi(a \mid s; \theta) $ to select actions based on the current state and a critic, which estimates the value function $ V(s; w) $ to evaluate the quality of states and actions. The actor and critic networks share a convolutional backbone for feature extraction, with separate heads for policy prediction and value estimation.</p>
+
+<p>The A2C training process involves four key steps. First, the agent collects experience by interacting with parallelized environment instances, gathering state, action, and reward trajectories. Next, advantages $ A(s, a) $ are calculated using the Temporal Difference (TD) error:</p>
+
+<p>$$\ A(s, a) = r + \gamma V(s’) - V(s) $$ where $ r $ is the immediate reward, $ \gamma $ is the discount factor, and $ V(s’) $ and $ V(s) $ are the values of the next and current states, respectively. The actor network is then updated using the policy gradient:</p>
+
+<p>$$\ \nabla_\theta J(\theta) = \mathbb{E} \left[ \nabla_\theta \log \pi(a \mid s; \theta) A(s, a) \right] $$ which maximizes the advantage-weighted log probability of actions. Finally, the critic network is updated by minimizing the mean squared error between its value predictions and the TD target:</p>
+
+<p>$$\ L_{critic}(w) = \mathbb{E} \left[ \left( V(s; w) - (r + \gamma V(s’; w)) \right)^2 \right] $$ <strong>Deep-Q-Network (DQN)</strong>. DQN implements Q-learning with deep neural networks, handling complex state spaces through experience replay and target networks. The network approximates Q-values for each action, with three convolutional layers for feature extraction from image inputs.</p>
+
+<p>The DQN training process consists of four main components. It begins by sampling batches from a replay memory, which stores experiences as state, action, reward, and next state tuples. This approach breaks correlations between consecutive experiences, enhancing training stability.</p>
+
+<p>A target network is employed to stabilize training by providing fixed Q-value targets, computed as:</p>
+
+<p>$$\ y_i = r_i + \gamma \max_{a’} Q_{\text{target}}(s’_i, a’; \theta^-) $$ An epsilon-greedy policy balances exploration and exploitation by probabilistically choosing between random actions and those with the highest Q-value.</p>
+
+<p>Finally, the model is optimized using gradient descent with Huber loss, defined as:</p>
+
+<p>$$\ \delta = Q(s, a) - \left( r + \gamma \max_{a’} Q(s’, a’) \right) $$ This combines the benefits of mean squared error and mean absolute error for stable optimization.</p>
+
+<p><strong>Proximal Policy Optimization (PPO)</strong>. PPO combines policy gradients and value-based learning, using two neural networks for policy and value estimation. The network architecture comprises separate policy and value networks that process resized and normalized image frames into tensors.</p>
+
+<p>The PPO training loop encompasses four essential steps. Initially, the agent interacts with the environment to collect trajectories of states, actions, and rewards. Advantages are then computed using Generalized Advantage Estimation (GAE) to balance bias and variance in policy gradient estimates.</p>
+
+<p>The policy network is updated using a clipped objective function:</p>
+
+<p>$$\ L_{\text{clip}}(\theta) = \mathbb{E}_t \left[ \min \left( r_t(\theta) \hat{A}_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) \hat{A}_t \right) \right] $$ where</p>
+
+<p>$$\ r_t(\theta) = \frac{\pi_\theta(a_t \mid s_t)}{\pi_{\theta_{\text{old}}}(a_t \mid s_t)} $$ is the probability ratio, $ \hat{A}_t $ is the advantage, and $ \epsilon $ controls the clipping range.</p>
+
+<p>Lastly, the value network is trained by minimizing the mean squared error between predicted and actual state values:</p>
+
+<p>$$\ L_{\text{value}} = \frac{1}{N} \sum_{i=1}^N \left( V_\theta(s_i) - R_i \right)^2 $$ where $ V_\theta(s_i) $ is the estimated value, and $ R_i $ is the actual return from the environment.</p>
+
+<h3 id="experiments">Experiments</h3>
+
+<p>We conducted a series of experiments to evaluate the performance of A2C, DQN, and PPO algorithms within the Kuka robotic arm simulation environment. Our experiments were designed to test the three aforementioned hypotheses.</p>
+
+<p><strong>Actor-Critic (A2C)</strong>. A2C’s performance partially contradicts H3. While its synchronous nature might slow learning, it demonstrates stable convergence. The decreasing mean episode length (Fig. 2a) indicates efficient task completion. The stabilizing action mean (Fig. 2b) and action standard deviation (Fig. 2c) suggest a balance between exploration and exploitation, crucial for complex manipulation tasks.</p>
+
+<div style="text-align: center;">
+    <img src="/assets/advml/a2c/a2c-first-series.jpg" width="100%" />
+    <em><br />Fig. 1. <b>A2C Performance Metrics:</b> Mean episode length shows initial decrease and stabilization, indicating policy convergence. Action mean increases and stabilizes, suggesting the policy is focusing on optimal actions. Action standard deviation shows initial exploration followed by a balance between exploration and exploitation.</em>
+</div>
+
+<p>The low value error (Fig. 3a) indicates an accurate critic, while the stable gradient norm (Fig. 3b) and clip loss (Fig. 3c) suggest robust policy updates. These metrics demonstrate A2C’s ability to learn effectively in the high-dimensional space, contrary to our initial hypothesis.</p>
+
+<div style="text-align: center;">
+    <img src="/assets/advml/a2c/a2c-second-series.jpg" width="100%" />
+    <em><br />Fig. 2. <b>A2C Training Diagnostics:</b> Value error shows consistent low error, indicating a well-trained critic. Gradient norm displays stability with occasional spikes, reflecting major policy updates. Clip loss fluctuations indicate a balance between policy retention and adaptation.</em>
+</div>
+
+<p><strong>Deep-Q-Network (DQN)</strong>. When analyzing the performance of DQN, we observe that overall learning progresses slowly and gradually over episodes. Specifically, the reward density over episodes (Fig. 4a) values for rewards 0 and 1 are relatively equally distributed and balanced. It measures how concentrated rewards are over episodes, providing insight into the distribution of rewards throughout training. We also measure reward frequency over episodes (Fig. 4b) and mean reward over episodes (Fig. 4c), which further illustrate the learning progress of DQN. Reward frequency tracks how often each reward value is received during an episode. Our results indicate that these values remain relatively consistent over episodes, although slightly higher rewards tend to occur as training progresses. On the other hand, mean reward over episodes reflects the average reward obtained by the agent per episode. This metric indicates stalled and gradual learning, as values plateau with occasional minor fluctuations.</p>
+
+<div style="text-align: center;">
+    <img src="/assets/advml/dqn/dqn-first-series.jpeg" width="100%" />
+    <em><br />Fig. 3. <b>DQN Performance Metrics:</b> Reward density shows balanced distribution between
+rewards 0 and 1. Reward frequency remains consistent with slight improvement over time. Mean reward indicates gradual learning with occasional plateaus.</em>
+</div>
+
+<p>DQN’s performance aligns with H2. The balanced reward density (Fig. 5a) and consistent reward frequency (Fig. 5b) suggest difficulty in achieving fine-grained control. The gradual increase in mean reward (Fig. 5c) indicates slow learning progress, further supporting our hypothesis. The epsilon decay (Fig. 6a) shows reduced exploration over time, potentially limiting fine-grained control learning. Periodic spikes in loss values (Fig. 6b) and fluctuations in Q-values (Fig. 6c) further support H2, indicating DQN’s struggle with precise control in this high-dimensional task.</p>
+
+<div style="text-align: center;">
+    <img src="/assets/advml/dqn/dqn-second-series.jpeg" width="100%" />
+    <em><br />Fig. 4. <b>DQN Training Diagnostics:</b> Epsilon decay shows reduced exploration over time. Loss values display periodic spikes, indicating instability. Q-value increases steadily with fluctuations, reflecting ongoing learning and occasional instability.</em>
+</div>
+
+<p><strong>Proximal Policy Optimization (PPO)</strong>. The following figures illustrate key performance metrics collected during training of the PPO agent in the Kuka environment. These metrics provide insights into both the learning dynamics and the agent’s evolving decision-making strategy: mean reward over seasons (Fig. 6a) acts as a high-level indicator of the agent’s overall performance. Initially, mean reward decreases, which could be attributed to exploratory behavior. Over time, the mean reward recovers and trends upward as the policy becomes more stable and optimized. Episode reward over seasons (Fig. 6b) offers a closer look at the agent’s immediate performance during specific tasks. The steady improvement in episode reward highlights the agent’s progress in task execution as it learns effective strategies. Epsilon over seasons (Fig. 6c) reflects the exploration-exploitation tradeoff, governed by an epsilon-greedy strategy. The graph shows an arithmetic decay in exploration over time, illustrating how the agent transitions from exploratory actions to exploiting its learned policy.</p>
+
+<div style="text-align: center;">
+    <img src="/assets/advml/ppo/ppo-first-series.jpeg" width="100%" />
+    <em><br />Fig. 5. <b>PPO Performance Metrics:</b> Mean reward shows initial decrease followed by consistent improvement, indicating effective learning. Episode reward demonstrates steady improvement in
+task execution. Epsilon decay illustrates the transition from exploration to exploitation.</em>
+</div>
+
+<p>PPO’s performance strongly supports H1. The consistent improvement in mean reward (Fig. 7a) and episode reward (Fig. 7b) demonstrates effective learning in the high-dimensional space. The epsilon decay (Fig. 7c) shows a smooth transition from exploration to exploitation, crucial for mastering fine-grained control. The decreasing beta (Fig. 8a) and high entropy (Fig. 8b) indicate PPO’s ability to maintain exploration while refining its policy. The decreasing total loss (Fig. 8c) further supports H1, showing PPO’s effectiveness in learning complex control policies.</p>
+
+<div style="text-align: center;">
+    <img src="/assets/advml/ppo/ppo-second-series.jpeg" width="100%" />
+    <em><br />Fig. 6. <b>PPO Training Diagnostics:</b> Beta decay indicates increasing policy confidence. High entropy suggests ongoing exploration. Decreasing total loss demonstrates overall improvement in
+performance and policy stability.</em>
+</div>
+
+<h3 id="discussion">Discussion</h3>
+
+<p>Our experiments largely support our initial hypotheses.</p>
+
+<p><em>PPO demonstrated superior performance</em>, excelling in the high-dimensional continuous action space of the Kuka environment. Its ability to maintain a balance between exploration and exploitation, as evidenced by the entropy and beta metrics, allowed it to learn fine-grained control policies effectively.</p>
+
+<p>While showing gradual improvement, <em>DQN struggled with fine-grained control as predicted</em>. The balanced reward density and slow increase in mean reward suggest difficulty in consistently achieving high-reward states, likely due to the limitations of discrete action spaces in a task requiring precise control.</p>
+
+<p>Contrary to our initial hypothesis, <em>A2C performed better than expected</em>. While its synchronous nature might have slowed initial learning, it demonstrated stable convergence and effective policy learning. The balance between exploration and exploitation, as shown by the action mean and standard deviation, allowed A2C to perform well in this complex task. Its unexpected performance highlights the importance of empirical testing, as theoretical predictions may not always align with practical outcomes in complex environments like robotic manipulation.</p>
+
+<p><strong>Conclusion</strong>. In conclusion, this work contributes to the growing body of knowledge on reinforcement learning for robotic manipulation while addressing key challenges such as efficient learning, generalization, and reliable evaluation. These findings not only advance our understanding of existing methods but also offer guidance for future research aimed at creating more efficient, adaptable, and robust RL solutions for real-world robotics.</p>
+
+  </article>
+
+  <!-- mathjax -->
+  
+  
+  <!-- disqus comments -->
+ 
+  
+</div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrap">
+
+    <!-- <h2 class="footer-heading">Kausar Patherya</h2> -->
+
+    <div class="footer-col-1 column">
+      <ul>
+        <li>Kausar Patherya</li>
+        <!-- <li><a href="mailto:"></a></li> -->
+      </ul>
+    </div>
+
+    <div class="footer-col-2 column">
+      <ul>
+        <li>
+          <a href="https://github.com/kpath1999">
+            <span class="icon github">
+              <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C2C2" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761
+                c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32
+                c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472
+                c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037
+                C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65
+                c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261
+                c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082
+                c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129
+                c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+            <span class="username">kpath1999</span>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://linkedin.com/in/k-path">
+            <span class="icon linkedin">
+              <svg style="filter: grayscale(50%);" class="linkedin-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2">
+                <rect width="24" height="24" fill="#D3D3D3"/>
+                <path d="M20.45,20.45H17.1v-5.21c0-1.25-0.02-2.85-1.74-2.85c-1.74,0-2.01,1.36-2.01,2.76v5.3h-3.35V9.5h3.22v1.47h0.04 c0.45-0.85,1.54-1.74,3.18-1.74c3.4,0,4.03,2.24,4.03,5.15L20.45,20.45L20.45,20.45z M5.95,8.03c-1.08,0-1.95-0.88-1.95-1.95 c0-1.08,0.87-1.95,1.95-1.95c1.07,0,1.95,0.87,1.95,1.95C7.9,7.15,7.02,8.03,5.95,8.03z M7.63,20.45H4.27V9.5h3.36V20.45z" fill="#FFFFFF"/>
+              </svg>
+            </span>
+            <span class="username">k-path</span>
+          </a>
+        </li>
+        
+        
+          
+      </ul>
+    </div>
+
+    <div class="footer-col-3 column">
+      <p class="text">I like to write, design, code, and share some of the cool projects I'm working on. I try not to be boring.</p>
+    </div>
+
+  </div>
+
+</footer>
+
+    </body>
+</html>
