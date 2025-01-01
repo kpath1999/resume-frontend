@@ -2,18 +2,131 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kausar Patherya</title>
-    <description>I like to write, design, code, and share some of the cool projects I&apos;m working on. I try not to be boring.</description>
+    <description>I like to write, design, code, and share some of the cool projects I&apos;m working on. From AI to CrossFit, I&apos;m all about pushing limits. This blog tries to capture that. I try not to be boring.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 29 Dec 2024 15:52:07 +0530</pubDate>
-    <lastBuildDate>Sun, 29 Dec 2024 15:52:07 +0530</lastBuildDate>
+    <pubDate>Wed, 01 Jan 2025 12:03:21 +0530</pubDate>
+    <lastBuildDate>Wed, 01 Jan 2025 12:03:21 +0530</lastBuildDate>
     <generator>Jekyll v4.3.4</generator>
+    
+      <item>
+        <title>Sting-Sense: Bus Analytics with Inertial Sensors</title>
+        <description>&lt;p&gt;Ever missed a bus on campus and wondered why traffic seems to flow so unpredictably? Or driven over a bumpy road and thought, “Someone should fix this!” At Georgia Tech, the Sting-Sense project is trying to tackle these issues, paving the way for smarter transportation solutions.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The challenge: traffic and maintenance on a busy campus&lt;/strong&gt;. Urban campus transportation systems face numerous challenges, including traffic congestion and road maintenance. The Sting-Sense project addresses these issues by implementing an IoT system on GT’s bus network. This system provides visibility into bus behavior across different times of the day, enabling data-driven decision making.&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;iframe src=&quot;https://kpath1999.github.io/gtbusmap&quot; width=&quot;80%&quot; height=&quot;600px&quot; style=&quot;border:none;&quot;&gt;&lt;/iframe&gt;
+    &lt;em&gt;&lt;br /&gt;Fig. 1. &lt;b&gt;Dashboard MVP:&lt;/b&gt; Sting-Sense visualization. You can see all the routes mapped out, with the various colors denoting the road conditions.&lt;/em&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Hardware setup: compact yet powerful&lt;/strong&gt;. The Sting-Sense system consists of a custom-built hardware package featuring a microcontroller, a GPS module, and an inertial measurement unit (IMU) sensor. These devices were installed on buses serving four major routes: gold, green, blue, and red. The gold route, in particular, is a vital link between Georgia Tech’s central campus, Tech Square, and the Midtown MARTA Station.&lt;sup&gt;1&lt;/sup&gt;&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;img src=&quot;/assets/mci/hardware-setup.png&quot; width=&quot;70%&quot; /&gt;
+    &lt;em&gt;&lt;br /&gt;Fig. 2. &lt;b&gt;Hardware Setup:&lt;/b&gt; Compact and efficient, designed to fit seamlessly into the campus bus fleet.&lt;/em&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Data collection: metrics that matter&lt;/strong&gt;. To analyze bus behavior and road quality, the Sting-Sense system collects data on three key metrics:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Timing: Precise timestamps record the exact moment each data point is logged, enabling temporal analysis of traffic patterns.&lt;/li&gt;
+  &lt;li&gt;Location: GPS tracks the real-time movement of buses, providing insights into route efficiency and congestion hotspots.&lt;/li&gt;
+  &lt;li&gt;Movement: IMU sensors capture acceleration and orientation, crucial for detecting road anomalies and assessing driver performance.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The hardware setup took some time to build out, so we used the Sensor Logger app on an iPhone for the initial mapping of bus routes. It offers a range of sensors, including an accelerometer, gyroscope, GPS, barometer, and more. You can easily export all the data to a CSV for further processing.&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;img src=&quot;/assets/mci/sensor-logger.png&quot; width=&quot;20%&quot; /&gt; 
+    &lt;em&gt;&lt;br /&gt;Fig. 3. &lt;b&gt;Early Data Collection:&lt;/b&gt; The Sensor Logger app provided a user-friendly interface for capturing multi-sensor data during the project&apos;s pilot phase.&lt;/em&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Traffic congestion analysis&lt;/strong&gt;. We use GPS data to understand traffic patterns. Speed data from the GPS is grouped into four congestion levels (quartiles). This method helps us discern traffic patterns across the day and in different parts of campus. The slowest speeds (1st quartile) indicate high congestion.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;calculate_traffic_congestion&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;speed_stats&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;speed&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;describe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;calculate_congestion_level&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;speed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;speed&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;speed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;speed_stats&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;25%&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Heavy congestion
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;speed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;speed_stats&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;50%&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Moderate-heavy congestion
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;speed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;speed_stats&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Moderate congestion
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;speed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;speed_stats&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;75%&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Light congestion
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;speed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Unavailable data
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# No congestion
+&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Apply the function to each speed value
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;calculate_congestion_level&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Road quality assessment&lt;/strong&gt;. Vertical acceleration data is used to assess road quality. A measure is created called Standard Deviation of Vertical Acceleration (SDVA). SDVA is calculated by dividing the variation in vertical movement by the average speed. This helps detect bumps or issues in the road.&lt;/p&gt;
+
+&lt;p&gt;$$\ \text{SDVA} = \frac{\sigma(a_z)}{\bar{v}} $$ where $\sigma(a_z)$ is the standard deviation of vertical acceleration and $\bar{v}$ is the average speed over a segment. To focus on bumps and ignore small vibrations, the Butterworth low-pass filter is used. Thresholds are based on real-world data to classify road conditions into four categories.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;calculate_road_condition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;window_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    
+    &lt;span class=&quot;c1&quot;&gt;# Apply low-pass filter to vertical acceleration
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;sampling_rate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;seconds_elapsed&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;diff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cutoff_frequency&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Hz
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;z_filtered&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;butter_lowpass_filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cutoff_frequency&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sampling_rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Calculate SDVA (Standard Deviation of Vertical Acceleration)
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;sdva&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;z_filtered&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rolling&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;window_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Normalize SDVA by speed (to account for speed effects)
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;sdva_normalized&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;sdva&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;speed&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# Adding 1 to avoid division by zero
+&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Define thresholds for road condition classification
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;conditions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;sdva_normalized&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.05&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;sdva_normalized&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;sdva_normalized&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;sdva_normalized&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;sdva_normalized&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;values&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Create road_condition column
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;road_condition&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;conditions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;future-improvements&quot;&gt;Future Improvements&lt;/h3&gt;
+
+&lt;p&gt;To maximize the impact of Sting-Sense, we plan to upgrade the system with cellular network connectivity. This will allow for real-time data uploads to the cloud, making information instantly accessible for analysis and decision-making.&lt;/p&gt;
+
+&lt;p&gt;Our big goal is to build a system that can work on its own. This means processing data as soon as it’s collected and making decisions without human help. The implementation of predictive maintenance strategies in IoT systems in transportation brings several benefits.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It allows for a shift from reactive to proactive maintenance, minimizing unplanned downtime and disruptions in transportation services.&lt;/li&gt;
+  &lt;li&gt;By addressing maintenance needs before failures occur, organizations can improve the reliability and availability of vehicles and infrastructure, enhancing passenger safety and customer satisfaction.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Conclusion&lt;/strong&gt;. This pilot project can be improved further by adding more bus routes and including other campus vehicles. We could make this system even more useful by using machine learning to predict when buses need maintenance and finding better routes for buses. If we link Sting-Sense with other campus information like class schedules and event calendars, we could make the bus service respond better to campus needs.&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What’s next?&lt;/strong&gt; As we continue to improve Sting-Sense, Georgia Tech could set new standards for smart campus transportation and become a model for other schools and cities to follow. The project aligns with Georgia Tech’s goal to have 100% clean transportation by 2030. By leveraging IoT technologies, we can optimize route planning, enhance passenger experiences, monitor vehicle health in real-time, improve safety, and enable demand-responsive transit services.&lt;sup&gt;3&lt;/sup&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 13 Dec 2024 14:16:19 +0530</pubDate>
+        <link>http://localhost:4000/2024/12/13/mci-bus-analytics/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/12/13/mci-bus-analytics/</guid>
+        
+        
+      </item>
     
       <item>
         <title>SIT-UP: Smart Integrated Technology for Upright Posture</title>
         <description>&lt;p&gt;The SIT-UP system represents a novel approach to posture correction by integrating computer vision with vibratory and auditory feedback, utilizing a height-adjustable standing desk capable of autonomous adjustments. It aims to promote healthier postural habits while minimizing disruption to users’ workflows. The study evaluated the system’s ability to improve posture through a user study with three groups: control, passive and active interventions. Adjusting the desk height when bad posture was detected proved to be an effective strategy. Future research could focus on long-term studies and personalized calibration for individuals with specific needs.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;. Posture is how you hold your body. Humans did not evolve to sit for hours in unnatural positions working at a desk. As people tire mentally, they pay less attention to their posture. Working for long hours can cause unconscious slouching which reinforces poor postural habits. Beyond poor aesthetics, slouching or slumping can misalign the skeletal system, wear at your spine, cause breathing issues, and many other problems. It is in your best interest to maintain good posture.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;. Posture is how you hold your body. Humans did not evolve to sit for hours in unnatural positions working at a desk. As people tire mentally, they pay less attention to their posture. Working for long hours can cause unconscious slouching which reinforces poor postural habits. Beyond poor aesthetics, slouching or slumping can misalign the skeletal system, wear at your spine, cause breathing issues, and many other problems. It is in your best interest to maintain good posture.&lt;sup&gt;1&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Related work&lt;/strong&gt;. Our lifestyles don’t make this any easier. According to a recent study, 80% of the jobs in the U.S. involve prolonged computer or mobile device use. The risks linked to sedentary behavior are now ever present. Numerous posture correction systems have surfaced, including wearable sensors and ‘smart chairs’, but none have taken off. Challenges such as cognitive load and workflow disruptions continue to persist. There is a need for minimally disruptive, adaptive systems that can be integrated into our daily workflows. Our system promotes healthier postural habits without compromising productivity.&lt;/p&gt;
 
@@ -65,7 +178,12 @@
 &lt;h3 id=&quot;computer-vision-system&quot;&gt;Computer Vision System&lt;/h3&gt;
 
 &lt;p&gt;A dual-camera system uses one camera positioned in front and another at the side.&lt;/p&gt;
-&lt;iframe width=&quot;720&quot; height=&quot;400&quot; src=&quot;https://www.youtube.com/embed/W3mUOfoK-hg?si=PbCySZheUHO1ZvdU&amp;amp;start=3&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;iframe width=&quot;600&quot; height=&quot;280&quot; src=&quot;https://www.youtube.com/embed/W3mUOfoK-hg?si=PbCySZheUHO1ZvdU&amp;amp;start=3&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+    &lt;em&gt;&lt;br /&gt;Fig. 2. &lt;b&gt;Live demonstration:&lt;/b&gt; Teammates Justin Wit and Anwesha Gorantla demonstrating the SIT-UP system&apos;s dual camera setup.&lt;/em&gt;
+&lt;/div&gt;
+
 &lt;p&gt;The front camera measures leaning and level misalignment of shoulders. The side camera identifies head posture and slouching. Posture is evaluated every 0.5 seconds and key metrics are logged, including:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -111,35 +229,35 @@
 
 &lt;div style=&quot;text-align: center;&quot;&gt;
     &lt;img src=&quot;/assets/hri/control_composite_score_over_time.png&quot; width=&quot;60%&quot; /&gt;
-    &lt;em&gt;&lt;br /&gt;Fig. 2. &lt;b&gt;Control Group:&lt;/b&gt; A single user was treated as the baseline, and measurements were perturbed and averaged across five instances. The control group achieved an overall mean composite score of 61.96 and a standard deviation of 16.98, with a total of 18,101 data points collected.&lt;/em&gt;
+    &lt;em&gt;&lt;br /&gt;Fig. 3. &lt;b&gt;Control Group:&lt;/b&gt; A single user was treated as the baseline, and measurements were perturbed and averaged across five instances. The control group achieved an overall mean composite score of 61.96 and a standard deviation of 16.98, with a total of 18,101 data points collected.&lt;/em&gt;
 &lt;/div&gt;
 
 &lt;p&gt;The passive group (n=5) exhibited more pronounced variations in posture scores, with lower mean values and wider variance bands compared to the control group. This reflects the diversity in user responsiveness to varying stimuli. Some users appeared highly responsive to auditory cues, while others barely noticed and/or struggled to interpret the feedback.&lt;/p&gt;
 
 &lt;div style=&quot;text-align: center;&quot;&gt;
     &lt;img src=&quot;/assets/hri/passive_composite_score_over_time.png&quot; width=&quot;60%&quot; /&gt;
-    &lt;em&gt;&lt;br /&gt;Fig. 3. &lt;b&gt;Passive Group:&lt;/b&gt; With the passive group, the mean is lower and the variance bands are larger due to a diverse user pool. The passive group achieved an overall mean composite score of 53.65 and a standard deviation of 28.55, with a total of 17,845 data points collected.&lt;/em&gt;
+    &lt;em&gt;&lt;br /&gt;Fig. 4. &lt;b&gt;Passive Group:&lt;/b&gt; With the passive group, the mean is lower and the variance bands are larger due to a diverse user pool. The passive group achieved an overall mean composite score of 53.65 and a standard deviation of 28.55, with a total of 17,845 data points collected.&lt;/em&gt;
 &lt;/div&gt;
 
 &lt;p&gt;The individual user graphs reveal deeper insights. In the left panel, the posture score for a specific user showed a noticeable decline during the vibration phase. This user confessed that the vibrations were far too subtle. In contrast, the right panel shows another user with consistently high posture scores. Either they responded well to both modalities or they have naturally great posture. It’s hard to say. This is what makes it challenging to determine which intervention – vibration or sound – is more effective.&lt;/p&gt;
 
 &lt;div style=&quot;text-align: center;&quot;&gt;
     &lt;img src=&quot;/assets/hri/combined_posture_data.png&quot; width=&quot;60%&quot; /&gt;
-    &lt;em&gt;&lt;br /&gt;&lt;br /&gt;Fig. 4. &lt;b&gt;Passive Group User Analysis:&lt;/b&gt; (Left) User with a drop in posture score during the vibration phase. (Right) User with consistently good posture across both modalities.&lt;/em&gt;
+    &lt;em&gt;&lt;br /&gt;&lt;br /&gt;Fig. 5. &lt;b&gt;Passive Group User Analysis:&lt;/b&gt; (Left) User with a drop in posture score during the vibration phase. (Right) User with consistently good posture across both modalities.&lt;/em&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Box plots were created for this very purpose. The median score for sound is slightly higher than vibration, suggesting that sound may be marginally more effective at prompting behavior change.&lt;/p&gt;
 
 &lt;div style=&quot;text-align: center;&quot;&gt;
     &lt;img src=&quot;/assets/hri/intervention_effectiveness.png&quot; width=&quot;60%&quot; /&gt;
-    &lt;em&gt;&lt;br /&gt;&lt;br /&gt;Fig. 5. &lt;b&gt;Effectiveness of Intervention Modalities:&lt;/b&gt; Side-by-side box plots comparing the effectiveness of sound and vibration feedback for posture correction. Sound was found to be slightly more effective, with higher median scores compared to vibration.&lt;/em&gt;
+    &lt;em&gt;&lt;br /&gt;&lt;br /&gt;Fig. 6. &lt;b&gt;Effectiveness of Intervention Modalities:&lt;/b&gt; Side-by-side box plots comparing the effectiveness of sound and vibration feedback for posture correction. Sound was found to be slightly more effective, with higher median scores compared to vibration.&lt;/em&gt;
 &lt;/div&gt;
 
 &lt;p&gt;With the active group (n=5), the mean was slightly higher, and the variance bands were narrower than the passive group. The desk height adjustments were more effective than the passive interventions. It turns out that the mean score was lower than the control group likely due to the novel medium and/or user differences.&lt;/p&gt;
 
 &lt;div style=&quot;text-align: center;&quot;&gt;
     &lt;img src=&quot;/assets/hri/active_composite_score_over_time.png&quot; width=&quot;60%&quot; /&gt;
-    &lt;em&gt;&lt;br /&gt;&lt;br /&gt;Fig. 6. &lt;b&gt;Active Group:&lt;/b&gt; With the active group, the mean is slightly higher and the variance bands are narrower than the passive group. The active group achieved an overall mean composite score of 55.41 and a standard deviation of 18.81, with a total of 20,181 data points collected.&lt;/em&gt;
+    &lt;em&gt;&lt;br /&gt;&lt;br /&gt;Fig. 7. &lt;b&gt;Active Group:&lt;/b&gt; With the active group, the mean is slightly higher and the variance bands are narrower than the passive group. The active group achieved an overall mean composite score of 55.41 and a standard deviation of 18.81, with a total of 20,181 data points collected.&lt;/em&gt;
 &lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;Qualitative feedback&lt;/strong&gt;. A post-session questionnaire, adapted from the User Experience Questionnaire (UEQ), assessed effectiveness, intelligence, comfort, and fatigue with the SIT-UP system. Users in both the passive and active groups perceived the system as significantly more effective and intelligent compared to those in the control group. The productivity score showed minimal improvement, meaning users did not gain any superpowers while sitting upright. Comfort, fatigue and intrusiveness were rated less favorably in both intervention groups.&lt;/p&gt;
@@ -167,6 +285,144 @@
         <pubDate>Mon, 09 Dec 2024 15:15:16 +0530</pubDate>
         <link>http://localhost:4000/2024/12/09/situp-posture-hri/</link>
         <guid isPermaLink="true">http://localhost:4000/2024/12/09/situp-posture-hri/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Mastering Robotic Arm Manipulation with Deep Reinforcement Learning</title>
+        <description>&lt;p&gt;Robotic manipulation, combining robotics and machine learning, aims to develop adaptive systems for tasks like grasping and assembling. This project applies reinforcement learning (RL) algorithms to train a robotic arm for pick-and-place operations using the PyBullet physics engine. Advantage Actor Critic (A2C), Deep-Q-Networks (DQN), and Proximal Policy Optimization (PPO) are evaluated and compared in terms of sample efficiency, stability, and task completion rates.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Overview&lt;/strong&gt;. The Kuka environment in PyBullet simulates a robotic arm for pick-and-place tasks with realistic physics. It is open-source, models real-world systems, and balances complexity with tractability for RL research. This environment serves as a testbed to compare RL approaches like A2C, PPO, and DQN (value vs. policy, on vs. off policy), helping researchers choose algorithms for similar robotics tasks and inform future development.&lt;/p&gt;
+
+&lt;p&gt;The agent can choose from 7 discrete actions:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Move in x-direction (+/-).&lt;/li&gt;
+  &lt;li&gt;Move in y-direction (+/-).&lt;/li&gt;
+  &lt;li&gt;Adjust vertical angle (up/down).&lt;/li&gt;
+  &lt;li&gt;Do nothing.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Velocity for each direction is equal. A &lt;em&gt;height hack&lt;/em&gt; is leveraged, where the gripper automatically moves down for each action. As part of the reward structure, the agent receives a reward of +1 if an object is lifted above a height of 0.2 at the end of the episode. Lastly, the environment provides (48, 48, 3) RGB images as input, making way for convolutional neural networks (CNNs) to decode an optimal policy through purely visual input.&lt;sup&gt;1&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;literature-survey&quot;&gt;Literature Survey&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Advantage Actor Critic (A2C)&lt;/strong&gt;. Combines value-based and policy-based approaches, making it suitable for discrete and continuous action spaces.&lt;sup&gt;2&lt;/sup&gt; A2C learns a value function and a policy simultaneously, potentially leading to more stable and efficient learning in complex, high-dimensional state spaces. It employs a shared network architecture with convolutional layers feeding into separate policy and value function outputs. The inclusion of an entropy regularization term improves exploration by discouraging premature convergence to suboptimal policies.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Deep-Q-Networks (DQN)&lt;/strong&gt;. Learns control policies from high-dimensional sensory input, handling discrete policies well.&lt;sup&gt;3&lt;/sup&gt; DQN’s use of experience replay and target networks addresses stability issues in deep RL. However, its limitation to discrete actions might restrict fine-grained control needed for precise robotic manipulation. DQN tends to overestimate action values, which could lead to suboptimal policy selection.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Proximal Policy Optimization (PPO)&lt;/strong&gt;. Balances ease of implementation, sample complexity, and performance.&lt;sup&gt;4&lt;/sup&gt; Its ability to perform multiple epochs of minibatch updates from the same trajectory makes it sample-efficient. PPO’s conservative policy update mechanism leads to more stable learning, preventing drastic changes that might be detrimental in sensitive manipulation scenarios. It uses Generalized Advantage Estimation (GAE) to reduce variance in policy gradient estimates. The clipped surrogate objective provides a pessimistic estimate of the policy’s performance, potentially leading to more robust policies.&lt;/p&gt;
+
+&lt;p&gt;Each algorithm presents unique strengths and challenges for the Kuka arm control task. A2C offers versatility and efficient learning from visual data. DQN excels in handling discrete actions and visual inputs but may struggle with fine-grained control. PPO provides stable learning and optimization for fine-grained control, making it a strong candidate for this simulation.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Methodology&lt;/strong&gt;. We hypothesize that PPO will excel due to its effectiveness in high-dimensional continuous action spaces (H1), while DQN may struggle with fine-grained control (H2), and A2C might underperform due to its synchronous nature (H3). The algorithms are evaluated based on: (a) sample efficiency: measured by learning speed and performance relative to training steps; (b) stability: assessed through consistency in policy improvements and value estimations; (c) task completion rates: determined by successful object manipulations in the Kuka environment. This comparative approach allows us to identify the strengths and weaknesses of each algorithm in the context of robotic manipulation tasks.&lt;/p&gt;
+
+&lt;h3 id=&quot;algorithm-implementation&quot;&gt;Algorithm Implementation&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Actor-Critic (A2C)&lt;/strong&gt;. A2C combines policy gradient and value-based learning, making it suitable for continuous action spaces. The framework consists of an actor that learns the policy $ \pi(a \mid s; \theta) $ to select actions based on the current state and a critic, which estimates the value function $ V(s; w) $ to evaluate the quality of states and actions. The actor and critic networks share a convolutional backbone for feature extraction, with separate heads for policy prediction and value estimation.&lt;/p&gt;
+
+&lt;p&gt;The A2C training process involves four key steps. First, the agent collects experience by interacting with parallelized environment instances, gathering state, action, and reward trajectories. Next, advantages $ A(s, a) $ are calculated using the Temporal Difference (TD) error:&lt;/p&gt;
+
+&lt;p&gt;$$\ A(s, a) = r + \gamma V(s’) - V(s) $$ where $ r $ is the immediate reward, $ \gamma $ is the discount factor, and $ V(s’) $ and $ V(s) $ are the values of the next and current states, respectively. The actor network is then updated using the policy gradient:&lt;/p&gt;
+
+&lt;p&gt;$$\ \nabla_\theta J(\theta) = \mathbb{E} \left[ \nabla_\theta \log \pi(a \mid s; \theta) A(s, a) \right] $$ which maximizes the advantage-weighted log probability of actions. Finally, the critic network is updated by minimizing the mean squared error between its value predictions and the TD target:&lt;/p&gt;
+
+&lt;p&gt;$$\ L_{critic}(w) = \mathbb{E} \left[ \left( V(s; w) - (r + \gamma V(s’; w)) \right)^2 \right] $$ &lt;strong&gt;Deep-Q-Network (DQN)&lt;/strong&gt;. DQN implements Q-learning with deep neural networks, handling complex state spaces through experience replay and target networks. The network approximates Q-values for each action, with three convolutional layers for feature extraction from image inputs.&lt;/p&gt;
+
+&lt;p&gt;The DQN training process consists of four main components. It begins by sampling batches from a replay memory, which stores experiences as state, action, reward, and next state tuples. This approach breaks correlations between consecutive experiences, enhancing training stability.&lt;/p&gt;
+
+&lt;p&gt;A target network is employed to stabilize training by providing fixed Q-value targets, computed as:&lt;/p&gt;
+
+&lt;p&gt;$$\ y_i = r_i + \gamma \max_{a’} Q_{\text{target}}(s’_i, a’; \theta^-) $$ An epsilon-greedy policy balances exploration and exploitation by probabilistically choosing between random actions and those with the highest Q-value.&lt;/p&gt;
+
+&lt;p&gt;Finally, the model is optimized using gradient descent with Huber loss, defined as:&lt;/p&gt;
+
+&lt;p&gt;$$\ \delta = Q(s, a) - \left( r + \gamma \max_{a’} Q(s’, a’) \right) $$ This combines the benefits of mean squared error and mean absolute error for stable optimization.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Proximal Policy Optimization (PPO)&lt;/strong&gt;. PPO combines policy gradients and value-based learning, using two neural networks for policy and value estimation. The network architecture comprises separate policy and value networks that process resized and normalized image frames into tensors.&lt;/p&gt;
+
+&lt;p&gt;The PPO training loop encompasses four essential steps. Initially, the agent interacts with the environment to collect trajectories of states, actions, and rewards. Advantages are then computed using Generalized Advantage Estimation (GAE) to balance bias and variance in policy gradient estimates.&lt;/p&gt;
+
+&lt;p&gt;The policy network is updated using a clipped objective function:&lt;/p&gt;
+
+&lt;p&gt;$$&lt;br /&gt;
+L_{\text{clip}}(\theta) = \mathbb{E}_t \left[ 
+    \min \left( r_t(\theta) \hat{A}_t, 
+    \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) \hat{A}_t \right) 
+\right]
+$$ where&lt;/p&gt;
+
+&lt;p&gt;$$\ r_t(\theta) = \frac{\pi_\theta(a_t \mid s_t)}{\pi_{\theta_{\text{old}}}(a_t \mid s_t)} $$ is the probability ratio, $ \hat{A}_t $ is the advantage, and $ \epsilon $ controls the clipping range.&lt;/p&gt;
+
+&lt;p&gt;Lastly, the value network is trained by minimizing the mean squared error between predicted and actual state values:&lt;/p&gt;
+
+&lt;p&gt;$$\ L_{\text{value}} = \frac{1}{N} \sum_{i=1}^N \left( V_\theta(s_i) - R_i \right)^2 $$ where $ V_\theta(s_i) $ is the estimated value, and $ R_i $ is the actual return from the environment.&lt;/p&gt;
+
+&lt;h3 id=&quot;experiments&quot;&gt;Experiments&lt;/h3&gt;
+
+&lt;p&gt;We conducted a series of experiments to evaluate the performance of A2C, DQN, and PPO algorithms within the Kuka robotic arm simulation environment. Our experiments were designed to test the three aforementioned hypotheses.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Actor-Critic (A2C)&lt;/strong&gt;. A2C’s performance partially contradicts H3. While its synchronous nature might slow learning, it demonstrates stable convergence. The decreasing mean episode length (Fig. 2a) indicates efficient task completion. The stabilizing action mean (Fig. 2b) and action standard deviation (Fig. 2c) suggest a balance between exploration and exploitation, crucial for complex manipulation tasks.&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;img src=&quot;/assets/advml/a2c/a2c-first-series.jpg&quot; width=&quot;85%&quot; /&gt;
+    &lt;em&gt;&lt;br /&gt;Fig. 1. &lt;b&gt;A2C Performance Metrics:&lt;/b&gt; Mean episode length shows initial decrease and stabilization, indicating policy convergence. Action mean increases and stabilizes, suggesting the policy is focusing on optimal actions. Action standard deviation shows initial exploration followed by a balance between exploration and exploitation.&lt;/em&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The low value error (Fig. 3a) indicates an accurate critic, while the stable gradient norm (Fig. 3b) and clip loss (Fig. 3c) suggest robust policy updates. These metrics demonstrate A2C’s ability to learn effectively in the high-dimensional space, contrary to our initial hypothesis.&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;img src=&quot;/assets/advml/a2c/a2c-second-series.jpg&quot; width=&quot;85%&quot; /&gt;
+    &lt;em&gt;&lt;br /&gt;Fig. 2. &lt;b&gt;A2C Training Diagnostics:&lt;/b&gt; Value error shows consistent low error, indicating a well-trained critic. Gradient norm displays stability with occasional spikes, reflecting major policy updates. Clip loss fluctuations indicate a balance between policy retention and adaptation.&lt;/em&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Deep-Q-Network (DQN)&lt;/strong&gt;. When analyzing the performance of DQN, we observe that overall learning progresses slowly and gradually over episodes. Specifically, the reward density over episodes (Fig. 4a) values for rewards 0 and 1 are relatively equally distributed and balanced. It measures how concentrated rewards are over episodes, providing insight into the distribution of rewards throughout training. We also measure reward frequency over episodes (Fig. 4b) and mean reward over episodes (Fig. 4c), which further illustrate the learning progress of DQN. Reward frequency tracks how often each reward value is received during an episode. Our results indicate that these values remain relatively consistent over episodes, although slightly higher rewards tend to occur as training progresses. On the other hand, mean reward over episodes reflects the average reward obtained by the agent per episode. This metric indicates stalled and gradual learning, as values plateau with occasional minor fluctuations.&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;img src=&quot;/assets/advml/dqn/dqn-first-series.jpeg&quot; width=&quot;85%&quot; /&gt;
+    &lt;em&gt;&lt;br /&gt;Fig. 3. &lt;b&gt;DQN Performance Metrics:&lt;/b&gt; Reward density shows balanced distribution between
+rewards 0 and 1. Reward frequency remains consistent with slight improvement over time. Mean reward indicates gradual learning with occasional plateaus.&lt;/em&gt;
+&lt;/div&gt;
+
+&lt;p&gt;DQN’s performance aligns with H2. The balanced reward density (Fig. 5a) and consistent reward frequency (Fig. 5b) suggest difficulty in achieving fine-grained control. The gradual increase in mean reward (Fig. 5c) indicates slow learning progress, further supporting our hypothesis. The epsilon decay (Fig. 6a) shows reduced exploration over time, potentially limiting fine-grained control learning. Periodic spikes in loss values (Fig. 6b) and fluctuations in Q-values (Fig. 6c) further support H2, indicating DQN’s struggle with precise control in this high-dimensional task.&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;img src=&quot;/assets/advml/dqn/dqn-second-series.jpeg&quot; width=&quot;85%&quot; /&gt;
+    &lt;em&gt;&lt;br /&gt;Fig. 4. &lt;b&gt;DQN Training Diagnostics:&lt;/b&gt; Epsilon decay shows reduced exploration over time. Loss values display periodic spikes, indicating instability. Q-value increases steadily with fluctuations, reflecting ongoing learning and occasional instability.&lt;/em&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Proximal Policy Optimization (PPO)&lt;/strong&gt;. The following figures illustrate key performance metrics collected during training of the PPO agent in the Kuka environment. These metrics provide insights into both the learning dynamics and the agent’s evolving decision-making strategy: mean reward over seasons (Fig. 6a) acts as a high-level indicator of the agent’s overall performance. Initially, mean reward decreases, which could be attributed to exploratory behavior. Over time, the mean reward recovers and trends upward as the policy becomes more stable and optimized. Episode reward over seasons (Fig. 6b) offers a closer look at the agent’s immediate performance during specific tasks. The steady improvement in episode reward highlights the agent’s progress in task execution as it learns effective strategies. Epsilon over seasons (Fig. 6c) reflects the exploration-exploitation tradeoff, governed by an epsilon-greedy strategy. The graph shows an arithmetic decay in exploration over time, illustrating how the agent transitions from exploratory actions to exploiting its learned policy.&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;img src=&quot;/assets/advml/ppo/ppo-first-series.jpeg&quot; width=&quot;85%&quot; /&gt;
+    &lt;em&gt;&lt;br /&gt;Fig. 5. &lt;b&gt;PPO Performance Metrics:&lt;/b&gt; Mean reward shows initial decrease followed by consistent improvement, indicating effective learning. Episode reward demonstrates steady improvement in
+task execution. Epsilon decay illustrates the transition from exploration to exploitation.&lt;/em&gt;
+&lt;/div&gt;
+
+&lt;p&gt;PPO’s performance strongly supports H1. The consistent improvement in mean reward (Fig. 7a) and episode reward (Fig. 7b) demonstrates effective learning in the high-dimensional space. The epsilon decay (Fig. 7c) shows a smooth transition from exploration to exploitation, crucial for mastering fine-grained control. The decreasing beta (Fig. 8a) and high entropy (Fig. 8b) indicate PPO’s ability to maintain exploration while refining its policy. The decreasing total loss (Fig. 8c) further supports H1, showing PPO’s effectiveness in learning complex control policies.&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;img src=&quot;/assets/advml/ppo/ppo-second-series.jpeg&quot; width=&quot;85%&quot; /&gt;
+    &lt;em&gt;&lt;br /&gt;Fig. 6. &lt;b&gt;PPO Training Diagnostics:&lt;/b&gt; Beta decay indicates increasing policy confidence. High entropy suggests ongoing exploration. Decreasing total loss demonstrates overall improvement in
+performance and policy stability.&lt;/em&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;discussion&quot;&gt;Discussion&lt;/h3&gt;
+
+&lt;p&gt;Our experiments largely support our initial hypotheses.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;PPO demonstrated superior performance&lt;/em&gt;, excelling in the high-dimensional continuous action space of the Kuka environment. Its ability to maintain a balance between exploration and exploitation, as evidenced by the entropy and beta metrics, allowed it to learn fine-grained control policies effectively.&lt;/p&gt;
+
+&lt;p&gt;While showing gradual improvement, &lt;em&gt;DQN struggled with fine-grained control as predicted&lt;/em&gt;. The balanced reward density and slow increase in mean reward suggest difficulty in consistently achieving high-reward states, likely due to the limitations of discrete action spaces in a task requiring precise control.&lt;/p&gt;
+
+&lt;p&gt;Contrary to our initial hypothesis, &lt;em&gt;A2C performed better than expected&lt;/em&gt;. While its synchronous nature might have slowed initial learning, it demonstrated stable convergence and effective policy learning. The balance between exploration and exploitation, as shown by the action mean and standard deviation, allowed A2C to perform well in this complex task. Its unexpected performance highlights the importance of empirical testing, as theoretical predictions may not always align with practical outcomes in complex environments like robotic manipulation.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Conclusion&lt;/strong&gt;. In conclusion, this work contributes to the growing body of knowledge on reinforcement learning for robotic manipulation while addressing key challenges such as efficient learning, generalization, and reliable evaluation. These findings not only advance our understanding of existing methods but also offer guidance for future research aimed at creating more efficient, adaptable, and robust RL solutions for real-world robotics.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 08 Dec 2024 18:22:08 +0530</pubDate>
+        <link>http://localhost:4000/2024/12/08/robot-arm-advml/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/12/08/robot-arm-advml/</guid>
         
         
       </item>

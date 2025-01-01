@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Mastering Robotic Arm Manipulation with Deep Reinforcement Learning</title>
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="I like to write, design, code, and share some of the cool projects I'm working on. I try not to be boring.">
+    <meta name="description" content="I like to write, design, code, and share some of the cool projects I'm working on. From AI to CrossFit, I'm all about pushing limits. This blog tries to capture that. I try not to be boring. Hope this helps.">
     <link rel="canonical" href="https://www.kausarpatherya.com/2024/12/08/robot-arm-advml/">
     <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Kausar Patherya posts" />
 
@@ -74,8 +74,6 @@
           
         
           
-        
-          <a class="page-link" href="georgiatech.ai/about/">About</a>
         
           
         
@@ -153,7 +151,7 @@
 
 <p>The policy network is updated using a clipped objective function:</p>
 
-<p>$$\ L_{\text{clip}}(\theta) = \mathbb{E}_t \left[ \min \left( r_t(\theta) \hat{A}_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) \hat{A}_t \right) \right] $$ where</p>
+<p>$$\ L_{\text{clip}}(\theta) = \mathbb{E}_t \left[ \min \left( r_t(\theta) \hat{A}_t, \text{clip}(r_t(\theta), 1 \pm \epsilon) \hat{A}_t \right) \right] $$ where</p>
 
 <p>$$\ r_t(\theta) = \frac{\pi_\theta(a_t \mid s_t)}{\pi_{\theta_{\text{old}}}(a_t \mid s_t)} $$ is the probability ratio, $ \hat{A}_t $ is the advantage, and $ \epsilon $ controls the clipping range.</p>
 
@@ -168,21 +166,21 @@
 <p><strong>Actor-Critic (A2C)</strong>. A2C’s performance partially contradicts H3. While its synchronous nature might slow learning, it demonstrates stable convergence. The decreasing mean episode length (Fig. 2a) indicates efficient task completion. The stabilizing action mean (Fig. 2b) and action standard deviation (Fig. 2c) suggest a balance between exploration and exploitation, crucial for complex manipulation tasks.</p>
 
 <div style="text-align: center;">
-    <img src="/assets/advml/a2c/a2c-first-series.jpg" width="100%" />
+    <img src="/assets/advml/a2c/a2c-first-series.jpg" width="85%" />
     <em><br />Fig. 1. <b>A2C Performance Metrics:</b> Mean episode length shows initial decrease and stabilization, indicating policy convergence. Action mean increases and stabilizes, suggesting the policy is focusing on optimal actions. Action standard deviation shows initial exploration followed by a balance between exploration and exploitation.</em>
 </div>
 
 <p>The low value error (Fig. 3a) indicates an accurate critic, while the stable gradient norm (Fig. 3b) and clip loss (Fig. 3c) suggest robust policy updates. These metrics demonstrate A2C’s ability to learn effectively in the high-dimensional space, contrary to our initial hypothesis.</p>
 
 <div style="text-align: center;">
-    <img src="/assets/advml/a2c/a2c-second-series.jpg" width="100%" />
+    <img src="/assets/advml/a2c/a2c-second-series.jpg" width="85%" />
     <em><br />Fig. 2. <b>A2C Training Diagnostics:</b> Value error shows consistent low error, indicating a well-trained critic. Gradient norm displays stability with occasional spikes, reflecting major policy updates. Clip loss fluctuations indicate a balance between policy retention and adaptation.</em>
 </div>
 
 <p><strong>Deep-Q-Network (DQN)</strong>. When analyzing the performance of DQN, we observe that overall learning progresses slowly and gradually over episodes. Specifically, the reward density over episodes (Fig. 4a) values for rewards 0 and 1 are relatively equally distributed and balanced. It measures how concentrated rewards are over episodes, providing insight into the distribution of rewards throughout training. We also measure reward frequency over episodes (Fig. 4b) and mean reward over episodes (Fig. 4c), which further illustrate the learning progress of DQN. Reward frequency tracks how often each reward value is received during an episode. Our results indicate that these values remain relatively consistent over episodes, although slightly higher rewards tend to occur as training progresses. On the other hand, mean reward over episodes reflects the average reward obtained by the agent per episode. This metric indicates stalled and gradual learning, as values plateau with occasional minor fluctuations.</p>
 
 <div style="text-align: center;">
-    <img src="/assets/advml/dqn/dqn-first-series.jpeg" width="100%" />
+    <img src="/assets/advml/dqn/dqn-first-series.jpeg" width="85%" />
     <em><br />Fig. 3. <b>DQN Performance Metrics:</b> Reward density shows balanced distribution between
 rewards 0 and 1. Reward frequency remains consistent with slight improvement over time. Mean reward indicates gradual learning with occasional plateaus.</em>
 </div>
@@ -190,14 +188,14 @@ rewards 0 and 1. Reward frequency remains consistent with slight improvement ove
 <p>DQN’s performance aligns with H2. The balanced reward density (Fig. 5a) and consistent reward frequency (Fig. 5b) suggest difficulty in achieving fine-grained control. The gradual increase in mean reward (Fig. 5c) indicates slow learning progress, further supporting our hypothesis. The epsilon decay (Fig. 6a) shows reduced exploration over time, potentially limiting fine-grained control learning. Periodic spikes in loss values (Fig. 6b) and fluctuations in Q-values (Fig. 6c) further support H2, indicating DQN’s struggle with precise control in this high-dimensional task.</p>
 
 <div style="text-align: center;">
-    <img src="/assets/advml/dqn/dqn-second-series.jpeg" width="100%" />
+    <img src="/assets/advml/dqn/dqn-second-series.jpeg" width="85%" />
     <em><br />Fig. 4. <b>DQN Training Diagnostics:</b> Epsilon decay shows reduced exploration over time. Loss values display periodic spikes, indicating instability. Q-value increases steadily with fluctuations, reflecting ongoing learning and occasional instability.</em>
 </div>
 
 <p><strong>Proximal Policy Optimization (PPO)</strong>. The following figures illustrate key performance metrics collected during training of the PPO agent in the Kuka environment. These metrics provide insights into both the learning dynamics and the agent’s evolving decision-making strategy: mean reward over seasons (Fig. 6a) acts as a high-level indicator of the agent’s overall performance. Initially, mean reward decreases, which could be attributed to exploratory behavior. Over time, the mean reward recovers and trends upward as the policy becomes more stable and optimized. Episode reward over seasons (Fig. 6b) offers a closer look at the agent’s immediate performance during specific tasks. The steady improvement in episode reward highlights the agent’s progress in task execution as it learns effective strategies. Epsilon over seasons (Fig. 6c) reflects the exploration-exploitation tradeoff, governed by an epsilon-greedy strategy. The graph shows an arithmetic decay in exploration over time, illustrating how the agent transitions from exploratory actions to exploiting its learned policy.</p>
 
 <div style="text-align: center;">
-    <img src="/assets/advml/ppo/ppo-first-series.jpeg" width="100%" />
+    <img src="/assets/advml/ppo/ppo-first-series.jpeg" width="85%" />
     <em><br />Fig. 5. <b>PPO Performance Metrics:</b> Mean reward shows initial decrease followed by consistent improvement, indicating effective learning. Episode reward demonstrates steady improvement in
 task execution. Epsilon decay illustrates the transition from exploration to exploitation.</em>
 </div>
@@ -205,7 +203,7 @@ task execution. Epsilon decay illustrates the transition from exploration to exp
 <p>PPO’s performance strongly supports H1. The consistent improvement in mean reward (Fig. 7a) and episode reward (Fig. 7b) demonstrates effective learning in the high-dimensional space. The epsilon decay (Fig. 7c) shows a smooth transition from exploration to exploitation, crucial for mastering fine-grained control. The decreasing beta (Fig. 8a) and high entropy (Fig. 8b) indicate PPO’s ability to maintain exploration while refining its policy. The decreasing total loss (Fig. 8c) further supports H1, showing PPO’s effectiveness in learning complex control policies.</p>
 
 <div style="text-align: center;">
-    <img src="/assets/advml/ppo/ppo-second-series.jpeg" width="100%" />
+    <img src="/assets/advml/ppo/ppo-second-series.jpeg" width="85%" />
     <em><br />Fig. 6. <b>PPO Training Diagnostics:</b> Beta decay indicates increasing policy confidence. High entropy suggests ongoing exploration. Decreasing total loss demonstrates overall improvement in
 performance and policy stability.</em>
 </div>
@@ -282,13 +280,32 @@ performance and policy stability.</em>
           </a>
         </li>
         
-        
-          
+        <li>
+          <a href="https://www.youtube.com/@gatechai">
+          <span class="icon youtube">
+          <svg version="1.1" class="youtube-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" width="16" height="16" enable-background="new 0 0 16 16" xml:space="preserve">
+          <path fill="#C2C2C2" d="M15.8,4.8c-0.2-1.3-0.8-2.2-2.2-2.4C11.4,2,8,2,8,2S4.6,2,2.4,2.4C1,2.6,0.3,3.5,0.2,4.8C0,6.1,0,8,0,8 s0,1.9,0.2,3.2c0.2,1.3,0.8,2.2,2.2,2.4C4.6,14,8,14,8,14s3.4,0,5.6-0.4c1.4-0.3,2-1.1,2.2-2.4C16,9.9,16,8,16,8S16,6.1,15.8,4.8z M6,11V5l5,3L6,11z"/>
+          </svg>
+          </span>
+          <span class="username">gatechai</span>
+          </a>
+          </li>
+          <li>
+          <a href="https://creators.spotify.com/pod/show/gatechai">
+          <span class="icon spotify">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#C2C2C2" class="bi bi-spotify" viewBox="0 0 16 16"> <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.5.5 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288"/> </svg>
+          <!-- <svg version="1.1" class="spotify-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" width="16" height="16" enable-background="new 0 0 16 16" xml:space="preserve">
+          <path fill="#C2C2C2" d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M11.7,11.5c-0.1,0.2-0.3,0.3-0.5,0.3 c-0.1,0-0.2,0-0.3-0.1C9.6,11.1,8.2,10.8,6.8,11c-1.3,0.1-2.5,0.5-3.7,1c-0.2,0.1-0.5,0-0.7-0.2c-0.1-0.2,0-0.5,0.2-0.7 c1.3-0.6,2.7-1,4.2-1.1c1.6-0.2,3.2,0.2,4.6,0.9C11.6,11.1,11.7,11.3,11.7,11.5z M12.7,9.3c-0.1,0.2-0.4,0.4-0.6,0.4 c-0.1,0-0.2,0-0.3-0.1c-1.6-0.9-3.4-1.3-5.2-1.2c-1.6,0.1-3.2,0.6-4.6,1.4c-0.3,0.1-0.6,0-0.8-0.2c-0.1-0.3,0-0.6,0.2-0.8 c1.6-0.9,3.3-1.4,5.1-1.5c2-0.1,4,0.3,5.8,1.3C12.7,8.7,12.8,9.1,12.7,9.3z M13.7,6.9c-0.2,0.3-0.5,0.4-0.8,0.4 c-0.1,0-0.2,0-0.3-0.1C10.6,6,8.4,5.6,6.2,5.7C4.3,5.9,2.4,6.4,0.7,7.3c-0.3,0.2-0.7,0-0.9-0.3C-0.3,6.7-0.2,6.3,0.2,6.1 c2-1,4.1-1.6,6.2-1.8c2.5-0.2,4.9,0.3,7.1,1.5C13.8,6,13.9,6.5,13.7,6.9z"/>
+          </svg> -->
+          </span>
+          <span class="username">gatechai</span>
+          </a>
+          </li>
       </ul>
     </div>
 
     <div class="footer-col-3 column">
-      <p class="text">I like to write, design, code, and share some of the cool projects I'm working on. I try not to be boring.</p>
+      <p class="text">I like to write, design, code, and share some of the cool projects I'm working on. From AI to CrossFit, I'm all about pushing limits. This blog tries to capture that. I try not to be boring. Hope this helps.</p>
     </div>
 
   </div>
