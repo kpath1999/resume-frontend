@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sting-Sense: Bus Analytics with Inertial Sensors</title>
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="I like to write, design, code, and share some of the cool projects I'm working on. From AI to CrossFit, I'm all about pushing limits. This blog tries to capture that. I try not to be boring. Hope this helps.">
+    <meta name="description" content="I like to write, design, code, and share some of the cool projects I'm working on. From AI to CrossFit, I'm all about pushing limits. This blog captures some of that. I try not to be boring, hope you had fun reading!">
     <link rel="canonical" href="https://www.kausarpatherya.com/2024/12/13/mci-bus-analytics/">
     <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Kausar Patherya posts" />
 
@@ -96,109 +96,93 @@
   </header>
 
   <article class="post-content">
-  <p>Ever missed a bus on campus and wondered why traffic seems to flow so unpredictably? Or driven over a bumpy road and thought, “Someone should fix this!” At Georgia Tech, the Sting-Sense project is trying to tackle these issues, paving the way for smarter transportation solutions.</p>
+  <p>This project was for a mobile computing and IoT class I took in Fall 2024, taught by Dr. Ashutosh Dhekne. The goal was to build a dashboard that would allow anyone to identify Georgia Tech bus behavior across different times of the day. We were asked to collect this data by installing 2 devices on the bus – a GPS and an IMU. The GPS records the geographic coordinates of the bus on a second-by-second basis. As the bus runs its route, the IMU provides fine-grained motion data (the body’s specific force, angular rate, and orientation of the body). This data, we realized, tells us a lot.</p>
 
-<p><strong>The challenge: traffic and maintenance on a busy campus</strong>. Urban campus transportation systems face numerous challenges, including traffic congestion and road maintenance. The Sting-Sense project addresses these issues by implementing an IoT system on GT’s bus network. This system provides visibility into bus behavior across different times of the day, enabling data-driven decision making.</p>
+<div style="text-align: center;">
+    <img src="/assets/mci/mci-bus-analytics.png" width="85%" />
+    <em><br />Fig. 1. <b>Key Components:</b> On the left is our hardware setup and the Stinger bus that runs across the Georgia Tech campus. On the right is the UI of the Sensor Logger app. All of this will be elaborated upon.</em>
+</div>
+
+<p>A common complaint among students at Tech is the ride quality around certain parts of campus. The roads can be uneven, and passengers hold tight to the sides to avoid falling over. Sting-Sense made this problem more visible to the transportation department. By mapping all four routes using GPS and IMU data, we created a dashboard that tells you where the bus is bumpiest.</p>
+
+<p>Doing this is not as complicated as it seems. The only major task was installing the Sensor Logger app. It records data from multiple sensors (more than we needed). I enabled the GPS option, in addition to the accelerometer, gravity, gyroscope, orientation, magnetometer and barometer sensors. Once I found myself on a bus ready for data collection, I stuck my phone to the wall using one of those hanging strips you find at Target. This keeps the phone at a stationary angle while the bus bobs around. Several metrics were logged, but the ones most useful were the:</p>
+
+<ul>
+  <li>Local time of measurement (EST),</li>
+  <li>Latitude and longitude,</li>
+  <li>Accelerometer readings in three axes (x, y, z),</li>
+  <li>Travel speed, and</li>
+  <li>Orientation angles (roll, pitch, yaw).</li>
+</ul>
+
+<p>The last three variables helped with inferring the road condition. The simplest solution was to use the accelerometer reading. Since the phone was stuck upright against the wall, it was the y-axis acceleration that pointed upwards. This would capture bumps as the bus dips into a pothole.</p>
+
+<p>The y-axis acceleration was passed through a low-pass filter. This <em>passes</em> all signals below a predefined cutoff point and blocks anything above it. It helps remove any high-frequency noise, providing a cleaner signal of the bus’s vertical movement. The standard deviation of the vertical acceleration was recorded. To sound official, we called it the SDVA (Standard Deviation of Vertical Acceleration). This quantifies the variability in vertical acceleration. Higher SDVA values means more variable vertical acceleration, suggesting rougher road conditions. The SDVA was then divided by speed. Doing this is crucial because higher speeds naturally lead to more vertical acceleration, even on smooth roads. By dividing SDVA by speed, you get a measure of road roughness that’s comparable across different vehicle speeds.</p>
+
+<p>The quartiles (Q1, Q2, Q3) of the normalized SDVA dataset were computed. These quartiles were used to define 5 categories of road quality:</p>
+
+<ul>
+  <li>5 (Excellent): normalized SDVA &lt; Q1</li>
+  <li>4 (Good): Q1 &lt;= normalized SDVA &lt; Q2</li>
+  <li>3 (Fair): Q2 &lt;= normalized SDVA &lt; Q3</li>
+  <li>2 (Poor): Q3 &lt;= normalized SDVA &lt; (Q3 + 1.5 * IQR)</li>
+  <li>1 (Very Poor): normalized SDVA &gt;= (Q3 + 1.5 * IQR),</li>
+</ul>
+
+<p>where IQR is the Interquartile Range (Q3 – Q1).</p>
+
+<p>And that’s how the dashboard below came to be.</p>
 
 <div style="text-align: center;">
     <iframe src="https://kpath1999.github.io/gtbusmap" width="90%" height="600px" style="border:none;"></iframe>
-    <em><br />Fig. 1. <b>Dashboard MVP:</b> Sting-Sense visualization. You can see all the routes mapped out, with the various colors denoting the road conditions.</em>
+    <em><br />Fig. 2. <b>Dashboard MVP:</b> Sting-Sense visualization. You can see all the routes mapped out, with the various colors denoting the road conditions.</em>
 </div>
 
-<p><strong>Hardware setup: compact yet powerful</strong>. The Sting-Sense system consists of a custom-built hardware package featuring a microcontroller, a GPS module, and an inertial measurement unit (IMU) sensor. These devices were installed on buses serving four major routes: gold, green, blue, and red. The gold route, in particular, is a vital link between Georgia Tech’s central campus, Tech Square, and the Midtown MARTA Station.<sup>1</sup></p>
+<p>This is what my professor said:</p>
+
+<blockquote>
+  <p>“Looks beautiful, this is exactly what I wanted. But what about data from different times of the day? This would unlock more insights, especially traffic congestion along the gold route. It’s not viable to use your smartphone anymore for this since I need data across the day. Come up with another hardware solution.”</p>
+</blockquote>
+
+<p>So that’s what we did. He supplied us with a microcontroller, GPS and IMU that we soldered onto a tripler (thank you to the staff at the Hive Makerspace; without their guidance, setting up the hardware would have taken much longer). After some Arduino coding, the device spit out the following data when turned on.</p>
 
 <div style="text-align: center;">
-    <img src="/assets/mci/hardware-setup.png" width="70%" />
-    <em><br />Fig. 2. <b>Hardware Setup:</b> Compact and efficient, designed to fit seamlessly into the campus bus fleet.</em>
+    <img src="/assets/mci/sample-data.png" width="100%" />
 </div>
 
-<p><strong>Data collection: metrics that matter</strong>. To analyze bus behavior and road quality, the Sting-Sense system collects data on three key metrics:</p>
+<p>2 setups were created and installed on the gold and green bus routes. We were able to collect 12 hours’ worth of data for each before the battery drained. The goal now was to infer the speed of the bus at each timestamp. Middle school math came in handy. We all know that speed equals distance over time. In the same vein, speed was calculated in the code block below:</p>
 
-<ol>
-  <li>Timing: Precise timestamps record the exact moment each data point is logged, enabling temporal analysis of traffic patterns.</li>
-  <li>Location: GPS tracks the real-time movement of buses, providing insights into route efficiency and congestion hotspots.</li>
-  <li>Movement: IMU sensors capture acceleration and orientation, crucial for detecting road anomalies and assessing driver performance.</li>
-</ol>
-
-<p>The hardware setup took some time to build out, so we used the Sensor Logger app on an iPhone for the initial mapping of bus routes. It offers a range of sensors, including an accelerometer, gyroscope, GPS, barometer, and more. You can easily export all the data to a CSV for further processing.</p>
-
-<div style="text-align: center;">
-    <img src="/assets/mci/sensor-logger.png" width="70%" /> 
-    <em><br />Fig. 3. <b>Early Data Collection:</b> The Sensor Logger app provided a user-friendly interface for capturing multi-sensor data during the project's pilot phase.</em>
-</div>
-
-<p><strong>Traffic congestion analysis</strong>. We use GPS data to understand traffic patterns. Speed data from the GPS is grouped into four congestion levels (quartiles). This method helps us discern traffic patterns across the day and in different parts of campus. The slowest speeds (1st quartile) indicate high congestion.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">calculate_traffic_congestion</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="n">speed_stats</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">speed</span><span class="sh">'</span><span class="p">].</span><span class="nf">describe</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">calculate_congestion_level</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
-        <span class="n">speed</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="sh">'</span><span class="s">speed</span><span class="sh">'</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">speed</span> <span class="o">&lt;=</span> <span class="n">speed_stats</span><span class="p">[</span><span class="sh">'</span><span class="s">25%</span><span class="sh">'</span><span class="p">]:</span>
-            <span class="k">return</span> <span class="mi">5</span>  <span class="c1"># Heavy congestion
-</span>        <span class="k">elif</span> <span class="n">speed</span> <span class="o">&lt;=</span> <span class="n">speed_stats</span><span class="p">[</span><span class="sh">'</span><span class="s">50%</span><span class="sh">'</span><span class="p">]:</span>
-            <span class="k">return</span> <span class="mi">4</span>  <span class="c1"># Moderate-heavy congestion
-</span>        <span class="k">elif</span> <span class="n">speed</span> <span class="o">&lt;=</span> <span class="n">speed_stats</span><span class="p">[</span><span class="sh">'</span><span class="s">mean</span><span class="sh">'</span><span class="p">]:</span>
-            <span class="k">return</span> <span class="mi">3</span>  <span class="c1"># Moderate congestion
-</span>        <span class="k">elif</span> <span class="n">speed</span> <span class="o">&lt;=</span> <span class="n">speed_stats</span><span class="p">[</span><span class="sh">'</span><span class="s">75%</span><span class="sh">'</span><span class="p">]:</span>
-            <span class="k">return</span> <span class="mi">2</span>  <span class="c1"># Light congestion
-</span>        <span class="k">elif</span> <span class="n">speed</span> <span class="o">==</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="mi">0</span>  <span class="c1"># Unavailable data
-</span>        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="mi">1</span>  <span class="c1"># No congestion
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="p">.</span><span class="nf">notna</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="sh">'</span><span class="s">lati</span><span class="sh">'</span><span class="p">])</span> <span class="ow">and</span> <span class="n">pd</span><span class="p">.</span><span class="nf">notna</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="sh">'</span><span class="s">lati</span><span class="sh">'</span><span class="p">]):</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="nf">haversine_distance</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="sh">'</span><span class="s">lati</span><span class="sh">'</span><span class="p">],</span> <span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="sh">'</span><span class="s">longti</span><span class="sh">'</span><span class="p">],</span> <span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="sh">'</span><span class="s">lati</span><span class="sh">'</span><span class="p">],</span> <span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="sh">'</span><span class="s">longti</span><span class="sh">'</span><span class="p">])</span>
+        <span class="n">time_diff</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="sh">'</span><span class="s">time_seconds</span><span class="sh">'</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="sh">'</span><span class="s">time_seconds</span><span class="sh">'</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">time_diff</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="sh">'</span><span class="s">speed</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">distance</span> <span class="o">/</span> <span class="n">time_diff</span>  <span class="c1"># Speed in m/s
 </span>
-    <span class="c1"># Apply the function to each speed value
-</span>    <span class="k">return</span> <span class="n">df</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="n">calculate_congestion_level</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">speed</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">speed</span><span class="sh">'</span><span class="p">].</span><span class="nf">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="sh">'</span><span class="s">linear</span><span class="sh">'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><strong>Road quality assessment</strong>. Vertical acceleration data is used to assess road quality. A measure is created called Standard Deviation of Vertical Acceleration (SDVA). SDVA is calculated by dividing the variation in vertical movement by the average speed. This helps detect bumps or issues in the road.</p>
+<p>The Harversine formula is specifically designed to calculate the distance between two GPS points. Since the earth is spherical, this function calculates the angle between the two coordinates, using this angle to determine the distance along the Earth’s surface. Time difference is computed by converting time strings to seconds. The last two lines are where the distance over time calculation takes place, and any missing values are fixed by assuming a linear relationship between known values.</p>
 
-<p>$$\ \text{SDVA} = \frac{\sigma(a_z)}{\bar{v}} $$ where $\sigma(a_z)$ is the standard deviation of vertical acceleration and $\bar{v}$ is the average speed over a segment. To focus on bumps and ignore small vibrations, the Butterworth low-pass filter is used. Thresholds are based on real-world data to classify road conditions into four categories.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">calculate_road_condition</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-    
-    <span class="c1"># Apply low-pass filter to vertical acceleration
-</span>    <span class="n">sampling_rate</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">seconds_elapsed</span><span class="sh">'</span><span class="p">].</span><span class="nf">diff</span><span class="p">().</span><span class="nf">mean</span><span class="p">()</span>
-    <span class="n">cutoff_frequency</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># Hz
-</span>    <span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">z_filtered</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="nf">butter_lowpass_filter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">z</span><span class="sh">'</span><span class="p">],</span> <span class="n">cutoff_frequency</span><span class="p">,</span> <span class="n">sampling_rate</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-
-    <span class="c1"># Calculate SDVA (Standard Deviation of Vertical Acceleration)
-</span>    <span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">sdva</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">z_filtered</span><span class="sh">'</span><span class="p">].</span><span class="nf">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="n">window_size</span><span class="p">).</span><span class="nf">std</span><span class="p">()</span>
-
-    <span class="c1"># Normalize SDVA by speed (to account for speed effects)
-</span>    <span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">sdva_normalized</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">sdva</span><span class="sh">'</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">speed</span><span class="sh">'</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Adding 1 to avoid division by zero
-</span>
-    <span class="c1"># Define thresholds for road condition classification
-</span>    <span class="n">conditions</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">sdva_normalized</span><span class="sh">'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">),</span>
-        <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">sdva_normalized</span><span class="sh">'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">),</span>
-        <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">sdva_normalized</span><span class="sh">'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.15</span><span class="p">),</span>
-        <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">sdva_normalized</span><span class="sh">'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.2</span><span class="p">),</span>
-        <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">sdva_normalized</span><span class="sh">'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.2</span><span class="p">)</span>
-    <span class="p">]</span>
-
-    <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-
-    <span class="c1"># Create road_condition column
-</span>    <span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">road_condition</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="n">conditions</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">df</span>
-</code></pre></div></div>
-
-<h3 id="future-improvements">Future Improvements</h3>
-
-<p>To maximize the impact of Sting-Sense, we plan to upgrade the system with cellular network connectivity. This will allow for real-time data uploads to the cloud, making information instantly accessible for analysis and decision-making.</p>
-
-<p>Our big goal is to build a system that can work on its own. This means processing data as soon as it’s collected and making decisions without human help. The implementation of predictive maintenance strategies in IoT systems in transportation brings several benefits.</p>
+<p>Now that we have speed data, we can use it to infer traffic congestion levels. Like how we did for road conditions, we defined 5 categories of traffic congestion:</p>
 
 <ul>
-  <li>It allows for a shift from reactive to proactive maintenance, minimizing unplanned downtime and disruptions in transportation services.</li>
-  <li>By addressing maintenance needs before failures occur, organizations can improve the reliability and availability of vehicles and infrastructure, enhancing passenger safety and customer satisfaction.</li>
+  <li>5 (Heavy congestion): speed &lt;= Q1</li>
+  <li>4 (Moderate-heavy congestion): Q1 &lt; speed &lt;= Q2</li>
+  <li>3 (Moderate congestion): Q2 &lt; speed &lt;= mean</li>
+  <li>2 (Light congestion): mean &lt; speed &lt;= Q3</li>
+  <li>1 (No congestion): speed &gt; Q3</li>
 </ul>
 
-<p><strong>Conclusion</strong>. This pilot project can be improved further by adding more bus routes and including other campus vehicles. We could make this system even more useful by using machine learning to predict when buses need maintenance and finding better routes for buses. If we link Sting-Sense with other campus information like class schedules and event calendars, we could make the bus service respond better to campus needs.<sup>2</sup></p>
+<p>Lower numbers mean less congestion (and higher speeds), while higher numbers mean more congestion (and lower speeds). This is how we think about traffic – when there’s heavy congestion, everything slows down to a crawl.</p>
 
-<p><strong>What’s next?</strong> As we continue to improve Sting-Sense, Georgia Tech could set new standards for smart campus transportation and become a model for other schools and cities to follow. The project aligns with Georgia Tech’s goal to have 100% clean transportation by 2030. By leveraging IoT technologies, we can optimize route planning, enhance passenger experiences, monitor vehicle health in real-time, improve safety, and enable demand-responsive transit services.<sup>3</sup></p>
+<p>One can gain a nuanced view of traffic conditions, not just identifying whether there is congestion, but how severe it is. However, it’s important to note that this method does not account for planned stops or traffic lights, which could be incorporated in further iterations.</p>
+
+<p>The current version of this dashboard can be found here. It allows you to analyze traffic patterns for each route using an hour-based filter. We’re aware that the current version takes too long to load, compromising the user experience.</p>
+
+<p><strong>The road ahead</strong>. Improving the dashboards would be the immediate next step. Incorporating historical data and external traffic information could further enhance the congestion analysis. Furthermore, if we were to link Sting-Sense with class schedules and event calendars, we could make the bus service respond better to campus needs. The game-changer is when we upgrade the system with cellular network connectivity. Currently, we log bus data onto SD cards asynchronously, but with real-time data uploads to the cloud, we would make information readily available to the transportation department and the community at scale. We could make this system even more useful by using machine learning to predict when buses need maintenance. By conducting repairs before mechanical failures occur, the fleet always remains available.</p>
+
+<p>As we continue to improve Sting-Sense, Georgia Tech could set new standards for smart campus transportation and become a model for other schools and cities to follow. This project aligns with Tech’s goal of having 100% clean transportation by 2030. Leveraging IoT technologies, we can optimize route planning, monitor vehicle health in real-time, and enable demand-responsive transit services.</p>
 
   </article>
 
@@ -285,7 +269,7 @@
     </div>
 
     <div class="footer-col-3 column">
-      <p class="text">I like to write, design, code, and share some of the cool projects I'm working on. From AI to CrossFit, I'm all about pushing limits. This blog tries to capture that. I try not to be boring. Hope this helps.</p>
+      <p class="text">I like to write, design, code, and share some of the cool projects I'm working on. From AI to CrossFit, I'm all about pushing limits. This blog captures some of that. I try not to be boring, hope you had fun reading!</p>
     </div>
 
   </div>
