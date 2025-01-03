@@ -1,21 +1,25 @@
-[1] Kalaga, R. R., et al. "Measuring Urban Traffic Congestion – A Review." International Journal for Traffic and Transport Engineering, vol. 2, no. 4, 2012, pp. 286-305.
+[1] Dhekne, A. (n.d.). CS 8803: Mobile and Ubiquitous Computing. Georgia Institute of Technology. Retrieved January 3, 2025, from https://faculty.cc.gatech.edu/~dhekne/cs8803/course.html
 
-[2] Chen, Z., et al. "Vehicle speed measurement technologies in Intelligent Transportation Systems: current status, challenges and future directions." Artificial Intelligence and Autonomous Systems Review, 2024.
+[2] IMeasureU. (2020, February 6). How are IMUs different to GPS systems? https://imeasureu.com/2020/02/06/how-are-imus-different-to-gps-systems/
 
-[3] "Accelerometer vs. Gyroscope: What's the Difference?" Live Science, https://www.livescience.com/40103-accelerometer-vs-gyroscope.html. Accessed January 2, 2025.
+[3] u/Minute_Atmosphere. (2021, June 11). Potholes on campus [Reddit post]. r/gatech. https://www.reddit.com/r/gatech/comments/nxqud5/potholes_on_campus/
 
-[4] "Haversine formula to find distance between two points on a sphere." GeeksforGeeks, 5 Sep. 2022, https://www.geeksforgeeks.org/haversine-formula-to-find-distance-between-two-points-on-a-sphere/. Accessed January 2, 2025.
+[4] Sensor Logger. (2023). App Store. Retrieved January 3, 2025, from https://apps.apple.com/us/app/sensor-logger/id1531582925
 
-[5] "HAVERSINE." Snowflake Documentation, https://docs.snowflake.com/en/sql-reference/functions/haversine. Accessed January 2, 2025.
+[5] Target. (n.d.). Command strips. Retrieved January 3, 2025, from https://www.target.com/s/command+strips
 
-[6] "IoT in Transportation: Solutions and Applications." Digi International, https://www.digi.com/blog/post/iot-solutions-for-transportation. Accessed January 2, 2025.
+[6] SAS. (2018, September). Smartphone axes [Image]. https://blogs.sas.com/content/sgf/files/2018/09/smartphone_axes.png
 
-[7] Luo, F., et al. "A Survey of Road Traffic Congestion Measures towards a Sustainable and Resilient Transportation System." Sustainability, vol. 12, no. 11, 2020, 4660.
+[7] ScienceDirect. (n.d.). Butterworth filter. Retrieved January 3, 2025, from https://www.sciencedirect.com/topics/computer-science/butterworth-filter#:~:text=A%20Butterworth%20filter%20is%20defined,poles%20in%20higher%2Dorder%20filters
 
-[8] "How IoT Improves Public Transport for Passengers." Davra, https://www.davra.com/resources/how-the-internet-of-things-improves-public-transportation-for-passengers/. Accessed January 2, 2025.
+[8] Hudson, W. R., & Zaniewski, J. P. (1986). Ride quality. Center for Transportation Research, University of Texas at Austin. https://library.ctr.utexas.edu/digitized/cats/cats_rr_16.pdf
 
-[9] Susanto, A., and G. P. Kusuma. "Road Condition Detection Based on Accelerometer and Gyroscope Sensors Using Deep Learning LSTM." ICIC Express Letters, vol. 16, no. 8, August 2022, pp. 803-810.
+[9] Georgia Institute of Technology. (n.d.). About the Hive. Retrieved January 3, 2025, from https://hive.ece.gatech.edu/about/
 
-[10] "Investigating the Integration of IoT in Modern Public Transport." International Journal of Engineering Technology and Management Sciences, vol. 8, no. 1, January-February 2024.
+[10] Sari, M. Y. I., Prakoso, T., & Brotoharsono, T. (2020). Vehicle Distance Measurement Tuning using Haversine and Micro-Segmentation. International Journal of Advanced Science and Technology, 29(7s), 973-982. https://www.researchgate.net/publication/338451698_Vehicle_Distance_Measurement_Tuning_using_Haversine_and_Micro-Segmentation
 
-[11] Ren, H., et al. "Traffic congestion analysis: A new Perspective." 2017 IEEE International Conference on Multimedia and Expo (ICME), 2017, pp. 727-732.
+[11] IEEE. (n.d.). National Transportation Data & Analytics Solution (NTDAS) Dashboard. Retrieved from https://ntdas.ieee.org/dashboard/
+
+[12] Federal Highway Administration. (2020). Leveraging Data to Improve Fleet Management. U.S. Department of Transportation. https://ops.fhwa.dot.gov/publications/fhwahop20032/fhwa20032.pdf
+
+[13] U.S. Department of Transportation. (n.d.). Research and Innovative Technology Administration. Retrieved from https://rosap.ntl.bts.gov/view/dot/17903/dot_17903_DS1.pdfs
