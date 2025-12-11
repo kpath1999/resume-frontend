@@ -23,7 +23,7 @@
                   Kausar Patherya
                 </p>
                 <p>
-                  I'm a graduate student at Georgia Tech, where I am working at the intersection of machine learning and robotics. This website was created to share my work and crystallize my thoughts through writing.
+                  I am a PhD student at Georgia Tech's LLAMAS Lab, working at the intersection of AI and Systems. My research focuses on making efficient, multimodal AI run instantly on wearable technology — linking the physical world with ubiquitous intelligence.
                 </p>
                 <p>
                   Nothing on here is unique. It is an amalgamation of all that I've read so far, helping me observe this world of ours through fresh eyes. If I happen to see far, it's because I stand on the shoulders of giants.
@@ -43,31 +43,238 @@
               <td style="padding:20px;width:100%;vertical-align:middle">
                 <h2>Blog</h2>
                 <p>
-                  I enjoy writing about technology, fitness, philosophy, history, and drawing connections between seemingly different fields. I'm fascinated by AI and where it can lead our civilization. I hope to be part of this revolution, contributing my own little verse.
+                  My research focuses on intelligent systems, entities that can one day perceive the world as humans do. I'm fascinated by AI and where it can lead our civilization. I hope to be part of this revolution, contributing my own little verse.
                 </p>
               </td>
             </tr>
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    
+    <tr onmouseout="bus_stop()" onmouseover="bus_start()" bgcolor="#ffffd0">
+      <td style="padding:20px;width:25%;vertical-align:middle">
+        <div class="one" style="display:flex; justify-content:center; align-items:center; height:100%;">
+          <div class="two" id='bus_image'><video  width=100% height=100% muted autoplay loop>
+          <source src="images/mci/stinger-run-vid.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video></div>
+          <img src='images/mci/stinger-run-img.png' width="150">
+        </div>
+        <script type="text/javascript">
+          function bus_start() {
+            document.getElementById('bus_image').style.opacity = "1";
+          }
 
-    <tr onmouseout="standup_posture_stop()" onmouseover="standup_posture_start()">
+          function bus_stop() {
+            document.getElementById('bus_image').style.opacity = "0";
+          }
+          bus_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+        <a href="/2025/11/13/sensys-flash-fusion/index.html" target = "_blank" rel = "noopener noreferrer">
+			<span class="papertitle">Flash-Fusion: Enabling Expressive, Low-Latency Queries on IoT Sensor Streams with LLMs
+</span>
+        </a>
+        <br>
+        <strong>Kausar Patherya</strong>,
+        Francisco Romero,
+        Ashutosh Dhekne
+        <br>
+        <a href="https://arxiv.org/abs/2511.11885" target = "_blank" rel = "noopener noreferrer">arXiv</a>
+        /
+        <a href="https://github.com/kpath1999/sting-sense-map" target = "_blank" rel = "noopener noreferrer">frontend</a> 
+        / 
+        <a href="https://github.com/kpath1999/bus-rtos" target = "_blank" rel = "noopener noreferrer">firmware</a>
+        /
+        <a href="https://sting-sense-map.vercel.app/" target = "_blank" rel = "noopener noreferrer">demo</a>
+        <p>
+          We present Flash-Fusion, an end-to-end edge-cloud system that reduces the IoT data collection and analysis burden on users. Using an LLM planner, the system enables cost-effective querying of high-volume sensor streams without exceeding context limits.
+        </p>
+      </td>
+    </tr>
+
+    <!--
+    <tr onmouseout="causal_stop()" onmouseover="causal_start()">
+      <td style="padding:20px;width:25%;vertical-align:middle">
+        <div class="one" style="display:flex; justify-content:center; align-items:center; height:100%;">
+          <div class="two" id='trifinger_image'><video  width=100% height=100% muted autoplay loop>
+            <source src="images/causal/stacking-movement.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video></div>
+          <img src='images/causal/stacking-movement.png' width="170">
+        </div>
+        <script type="text/javascript">
+          function causal_start() {
+            document.getElementById('trifinger_image').style.opacity = "1";
+          }
+
+          function causal_stop() {
+            document.getElementById('trifinger_image').style.opacity = "0";
+          }
+          causal_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+        <a href="/2025/09/19/auto-calc-causal-world/index.html" target = "_blank" rel = "noopener noreferrer">
+			<span class="papertitle">AutoCaLC: A Causally-Aligned Framework for Automated Curriculum Design
+</span>
+        </a>
+        <br>
+        <strong>Kausar Patherya</strong>,
+        Batuhan Altundas,
+        Matthew Gombolay
+        <br>
+        <em>In Preparation</em>, 2025
+        <br>
+        <a href="https://github.com/kpath1999/causal-core-su25" target = "_blank" rel = "noopener noreferrer">code</a> / <span style="color:rgb(238, 158, 10);"><em>arXiV pre-print coming soon!</em></span>
+        <p>
+          AutoCaLC is a meta-learning framework designed to automate curriculum learning. The teacher agent selects environmental modifications based on the student's learning state, while the student provides feedback through performance metrics.
+        </p>
+      </td>
+    </tr>
+  -->
+
+    <!-- Georgia Tech AI podcast goes here -->
+    <tr onmouseout="gtai_stop()" onmouseover="gtai_start()">
+      <td style="padding:20px;width:25%;vertical-align:middle">
+        <div class="one" style="display:flex; justify-content:center; align-items:center; height:100%;">
+          <div class="two" id='gtai_intro_image'><video  width=100% height=100% muted autoplay loop>
+            <source src="images/gtai/gtai-intro-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video></div>
+          <img src='images/gtai/gtai-logo.png' width="150">
+        </div>
+        <script type="text/javascript">
+          function gtai_start() {
+            document.getElementById('gtai_intro_image').style.opacity = "1";
+          }
+
+          function gtai_stop() {
+            document.getElementById('gtai_intro_image').style.opacity = "0";
+          }
+          gtai_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+        <a href="https://georgiatech.ai" target = "_blank" rel = "noopener noreferrer">
+			<span class="papertitle">The Georgia Tech AI Podcast
+</span>
+        </a>
+        <br>
+        Interviews with leading AI and robotics researchers
+        <br>
+        <a href="http://youtube.com/@gatechai" target = "_blank" rel = "noopener noreferrer">youtube</a>
+        /
+        <a href="http://youtube.com/@gatechai" target = "_blank" rel = "noopener noreferrer">spotify</a>
+        <p>
+          The mission of this podcast is simple yet ambitious - to make cutting-edge AI research accessible to everyone. Through my interviews, I delve into the minds of the top researchers at Tech who are shaping the future of the intelligence age.
+        </p>
+      </td>
+    </tr>
+
+    <!-- 
+    <tr onmouseout="janus_stop()" onmouseover="janus_start()">
+      <td style="padding:20px;width:25%;vertical-align:middle">
+        <div class="one" style="display:flex; justify-content:center; align-items:center; height:100%;">
+          <div class="two" id='het_fleet'><video  width=100% height=100% muted autoplay loop>
+            <source src="images/slam/slam-mapping.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video></div>
+          <img src='images/slam/slam-mapping.png' width="170">
+        </div>
+        <script type="text/javascript">
+          function janus_start() {
+            document.getElementById('het_fleet').style.opacity = "1";
+          }
+
+          function janus_stop() {
+            document.getElementById('het_fleet').style.opacity = "0";
+          }
+          janus_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+        <a href="/2025/09/25/janus-project/index.html" target = "_blank" rel = "noopener noreferrer">
+			<span class="papertitle">Aerial-Ground Robot Platform for Reproducible Decentralized Spatial Perception
+</span>
+        </a>
+        <br>
+        Sandilya Garimella,
+        <strong>Kausar Patherya</strong>,
+        Lucas Trujillo,
+        Zeina Rmaile,
+        Ethan Kim,
+        Lu Gan
+        <br>
+        <em>In Preparation</em>, 2025
+        <br>
+        <a href="https://github.com/lunarlab-gatech/quad-ugv-mapping" target = "_blank" rel = "noopener noreferrer">code</a>
+        <p>
+          While single-robot SLAM has advanced significantly, deploying multiple robots would lead to accelerated exploration, improved map coverage, and enhanced robustness through redundancy.
+        </p>
+      </td>
+    </tr>
+  -->
+
+    <!-- Deep learning MRI GAN project goes here -->
+    <!-- TODO: change picture, add blog -->
+    <!-- <tr onmouseout="gan_stop()" onmouseover="gan_start()">
+      <td style="padding:20px;width:25%;vertical-align:middle">
+        <div class="one" style="display:flex; justify-content:center; align-items:center; height:100%;">
+          <div class="two" id='mri_image'><video  width=100% height=100% muted autoplay loop>
+            <source src="images/gan/xrayvid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video></div>
+          <img src='images/gan/xrayimage.jpg' width="160">
+        </div>
+        <script type="text/javascript">
+          function gan_start() {
+            document.getElementById('mri_image').style.opacity = "1";
+          }
+
+          function gan_stop() {
+            document.getElementById('mri_image').style.opacity = "0";
+          }
+          gan_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+        <a href="/2025/04/19/medganx-gan/index.html" target = "_blank" rel = "noopener noreferrer">
+			<span class="papertitle">MedGANx: Synthesizing X-Ray Images of Pneumonic and Healthy Lungs
+</span>
+        </a>
+        <br>
+        <strong>Kausar Patherya</strong>,
+        Ruchi Patel,
+        Idris Wibowo
+        <br>
+        <em>CS7643</em>, Spring 2025
+        <br>
+        <a href="https://github.com/iaweebowo/dl_medgan" target = "_blank" rel = "noopener noreferrer">code</a>
+        <p>
+          This paper presents MedGANx, an enhanced Auxiliary Classifier Generative Adversarial Network (AC-GAN) for synthesizing high-fidelity chest X-ray images of both normal and pneumonia-affected lungs.
+        </p>
+      </td>
+    </tr> -->
+
+    <tr onmouseout="situp_posture_stop()" onmouseover="situp_posture_start()">
       <td style="padding:20px;width:25%;vertical-align:middle">
         <div class="one" style="display:flex; justify-content:center; align-items:center; height:90%;">
-          <div class="two" id='standup_posture_image'><video  width=100% muted autoplay loop>
+          <div class="two" id='situp_posture_image'><video  width=100% muted autoplay loop>
           <source src="images/hri/situp-posture.mp4" type="video/mp4">
           Your browser does not support the video tag.
           </video></div>
           <img src='images/hri/situp-posture.png' width=90%>
         </div>
         <script type="text/javascript">
-          function standup_posture_start() {
-            document.getElementById('standup_posture_image').style.opacity = "1";
+          function situp_posture_start() {
+            document.getElementById('situp_posture_image').style.opacity = "1";
           }
 
-          function standup_posture_stop() {
-            document.getElementById('standup_posture_image').style.opacity = "0";
+          function situp_posture_stop() {
+            document.getElementById('situp_posture_image').style.opacity = "0";
           }
-          standup_posture_stop()
+          situp_posture_stop()
         </script>
       </td>
       <td style="padding:20px;width:75%;vertical-align:middle">
@@ -75,9 +282,10 @@
           <span class="papertitle">SIT-UP: Smart Integrated Technology for Upright Posture</span>
         </a>
         <br>
+        <strong>Kausar Patherya</strong>,
         Rishabh Goel,
-        Anwesha Gorantla,
-        Justin Wit
+        Justin Wit,
+        Anwesha Gorantla
         <br>
         <em>CS7633</em>, Fall 2024
         <br>
@@ -96,10 +304,10 @@
       <td style="padding:20px;width:25%;vertical-align:middle">
         <div class="one" style="justify-content:center; align-items:center; height:100%;">
           <div class="two" id='robotarm_image'><video  width=100% muted autoplay loop>
-          <source src="images/advml/robot-arm.mp4" type="video/mp4">
+          <source src="images/advml/robot_arm_vid.mp4" type="video/mp4">
           Your browser does not support the video tag.
           </video></div>
-          <img src='images/advml/robot-arm.png' width=100%>
+          <img src='images/advml/robot_arm.png' width=100%>
         </div>
         <script type="text/javascript">
           function robotarm_start() {
@@ -114,9 +322,10 @@
       </td>
       <td style="padding:20px;width:75%;vertical-align:middle">
         <a href="/2024/12/08/robot-arm-advml/index.html" target = "_blank" rel = "noopener noreferrer">
-          <span class="papertitle">Mastering Robot Manipulation with PyBullet</span>
+          <span class="papertitle">Mastering Kuka Pick & Place Operations with PyBullet</span>
         </a>
         <br>
+        <strong>Kausar Patherya</strong>,
         Arjun Bansal,
         Ruchi Patel,
         Ayushi Rajpoot
@@ -134,50 +343,47 @@
       </td>
     </tr>
 
-
-    <tr onmouseout="bus_stop()" onmouseover="bus_start()">
+    <!-- Put your overcooked MARL project here too -->
+    <!-- <tr onmouseout="marl_stop()" onmouseover="marl_start()">
       <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one" style="display:flex; justify-content:center; align-items:center; height:100%;">
-          <div class="two" id='bus_image'><video  width=100% height=100% muted autoplay loop>
-          <source src="images/jumping-bus-vid.mp4" type="video/mp4">
+        <div class="one" style="justify-content:center; align-items:center; height:100%;">
+          <div class="two" id='marl_image'><video  width=85% muted autoplay loop>
+          <source src="images/marl/overcooked-vid.mp4" type="video/mp4">
           Your browser does not support the video tag.
           </video></div>
-          <img src='images/jumping-bus.jpg' width="170">
+          <img src='images/marl/overcooked.png' width=85%>
         </div>
         <script type="text/javascript">
-          function bus_start() {
-            document.getElementById('bus_image').style.opacity = "1";
+          function marl_start() {
+            document.getElementById('marl_image').style.opacity = "1";
           }
 
-          function bus_stop() {
-            document.getElementById('bus_image').style.opacity = "0";
+          function marl_stop() {
+            document.getElementById('marl_image').style.opacity = "0";
           }
-          bus_stop()
+          marl_stop()
         </script>
       </td>
       <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="/2024/12/13/mci-bus-analytics/index.html" target = "_blank" rel = "noopener noreferrer">
-			<span class="papertitle">Sting-Sense: Bus Analytics with Inertial Sensors
-</span>
+        <a href="/2024/06/30/overcooked-marl/index.html" target = "_blank" rel = "noopener noreferrer">
+          <span class="papertitle">Effective Multi-Agent Learning with Asynchronous Advantage Actor-Critic</span>
         </a>
         <br>
-        Yu Wang,
-        Drumil Deliwala,
-        Ashutosh Dhekne
+        <em>CS7642</em>, Summer 2024
         <br>
-        <em>CS8803</em>, Fall 2024
+        <strong>Creators:</strong> Miguel Morales, Rodrigo Borela, Tim Bail, Taka Hasegawa, Chris Serrano
         <br>
-        <a href="https://github.com/kpath1999/gtbusmap" target = "_blank" rel = "noopener noreferrer">code</a>
+        <a href="https://github.com/kpath1999/robot-arm-f24" target = "_blank" rel = "noopener noreferrer">code</a>
         /
-        <a href="https://www.loom.com/share/9c2dda40251b46d8b28de9dce49a4cf4?sid=eeb687d6-37e4-4dbd-8ed8-e34b108479f3" target = "_blank" rel = "noopener noreferrer">video</a>
+        <a href="/images/advml/advml-final-presentations.pdf" target = "_blank" rel = "noopener noreferrer">slides</a>
         /
-        <a href="/refs/mci-analytics.txt" target = "_blank" rel = "noopener noreferrer">references</a>
+        <a href="/refs/advml-robotarm.txt" target = "_blank" rel = "noopener noreferrer">references</a>
         <p>
-          Sting-Sense provides visibility into Georgia Tech bus behavior at different times of the day. The system utilized inertial sensors and GPS technology to collect and analyze data from four bus routes.
+          This report proposes an Asynchronous Advantage Actor Critic (A3C) solution for the Overcooked environment. It explores training challenges, stabilization methods, and how key hyperparameters influence performance.
         </p>
       </td>
-    </tr>
-            
+    </tr> -->
+       
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>

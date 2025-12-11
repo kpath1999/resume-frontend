@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Flash-Fusion: Enabling Expressive, Low-Latency Queries on IoT Sensor Streams with LLMs</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="I like to write, design, code, and share some of the cool projects I'm working on. From AI to CrossFit, I'm all about pushing limits. This blog captures some of that. I try not to be boring, hope you had fun reading!">
+    <link rel="canonical" href="http://localhost:4000/2025/11/13/sensys-flash-fusion/">
+    <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Kausar Patherya posts" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-3698471-23', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- KaTeX script -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+          ]
+        });
+      });
+    </script>
+
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+
+  <div class="wrap">
+
+    <div style="float:left; margin-top:10px; margin-right:10px;">
+    <a href="/feed.xml">
+      <img src="/assets/rssicon.svg" width="40">
+    </a>
+    </div>
+
+    <a class="site-title" href="/">Kausar Patherya</a>
+    
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post">
+
+  <header class="post-header">
+    <h1>Flash-Fusion: Enabling Expressive, Low-Latency Queries on IoT Sensor Streams with LLMs</h1>
+    <p class="meta">Nov 13, 2025</p>
+  </header>
+
+  <article class="post-content">
+  <p>Smart cities and pervasive IoT sensor deployments have generated significant interest in IoT data analysis across fields like transportation and urban planning. At the same time, the rise of Large Language Models offer a new tool for exploring IoT data - particularly using its natural language interface for improved expressibility. Users today face two main challenges with gathering and interpreting IoT data today with LLMs: (1) data collection infrastructure is expensive, generating terabytes daily of low-level sensor readings that are too granular for immediate use, and (2) data analysis is time-consuming, requiring time-consuming iteration and technical expertise. Directly feeding all IoT telemetry to LLMs is impractical due to finite context windows, prohibitive token consumption (hundreds of millions of dollars at enterprise scales), and non-interactive latencies. What is missing is a system that first parses the user’s query to determine the required analytical task, then selects the relevant data slices, and finally chooses the right representation before invoking an LLM.</p>
+
+<p>To address these challenges, we present Flash-Fusion, an end-to-end edge-cloud system that addresses the IoT data collection and data analysis burden on users. Two core principles guide its design: (1) edge-based statistical summarization (achieving 73.5% data reduction) to tackle the data volume problem; and (2) cloud-based query planning that clusters behavioral data and assembles context-rich prompts to tackle the data interpretation problem. We deploy Flash-Fusion on a university bus fleet and evaluate against a baseline that feeds raw data directly to a state-of-the-art LLM. It achieves a 95% latency reduction and 98% decrease in token usage and costs while maintaining high-quality responses.
+Flash-Fusion enables personas across various disciplines - safety officers, urban planners, fleet managers, and data scientists - to quickly and efficiently iterate over IoT data without the burden of query authoring and preprocessing.</p>
+
+<h3 id="teaser">Teaser</h3>
+
+<p>Smart cities run on the Internet of Things (IoT), where networks of sensors stream data from roads, vehicles, utilities and public spaces, enabling city operators to make informed and timely decisions. This flow of information enriches public transportation systems, resulting in shorter trips, lower emissions and better daily experiences for residents. At the same time, Large Language Models (LLMs) have emerged as powerful tools for processing sensor data, particularly as they advance in their reasoning capabilities and support larger context windows. For example, they can interpret smartphone accelerometer data to recognize human activity, identify temperature anomalies in industrial machinery, or perform sensor fusion of optical and LIDAR data. Users are able to query LLMs using natural language, which enables highly expressive queries over data such as <em>“Which bus routes are running behind schedule?”</em>.</p>
+
+<div style="text-align: center;">
+    <img src="/assets/flash/flash-architecture.png" width="85%" />
+    <em><br />Fig. 1. <b>Flash-Fusion: Fast, Grounded Intelligence:</b> Sensor data are aggregated on-device, minimizing transmission overhead. Compact summaries are clustered in the cloud by behavioral type. When a user asks a question, the system analyzes their intent and fuses relevant data into the LLM prompt, yielding responses that are fast, verifiable, and grounded in real data.</em>
+</div>
+
+<p>Consider a fleet manager overseeing a city’s bus transit system. To improve passenger safety, the manager would like to identify aggressive driving behaviors (e.g., harsh braking and acceleration) that endanger riders. Identifying such behaviors has two main challenges:</p>
+
+<ul>
+  <li>
+    <p><strong>Data collection is expensive.</strong> To perform the analysis on the bus transit system, the fleet manager needs to first collect sufficient data. Building a data collection network requires a significant upfront investment in hardware, connectivity, and a scalable cloud backend, with projects often spanning months and costing hundreds of thousands of dollars. The fleet manager likely needs to equip several vehicles with IoT sensors that generate a continuous stream of telemetry data, including GPS and accelerometer readings. The resulting data streams are massive - adding up to terabytes daily for city-wide fleets - and continuous, demanding real-time processing. Cities invest in Intelligent Transportation System (ITS) infrastructure hoping the data can serve multiple departments, from urban planning to public safety. Urban planners study route trends to optimize bus networks, safety officers analyze braking patterns to spot risky intersections, and fleet managers track fuel use and maintenance needs. However, the raw sensor readings are often too low-level and specific to be immediately useful across these disciplines.</p>
+  </li>
+  <li>
+    <p><strong>Data analysis is time-consuming.</strong> Even after the data is collected, making sense of it to answer the fleet manager’s query is challenging. This process involves building ETL (Extract, Transform, Load) pipelines to feed sensor readings into a database, where analysts must write intricate queries to hunt for patterns. Not only is this approach slow, but it also demands deep technical and domain expertise to distinguish sensor noise from an aggressive driving event. This typically requires domain experts (e.g., the fleet manager) to sit with data analysis teams to carefully craft and iterate on queries to make sense of the data. Depending on the dataset size, this can take anywhere from hours to days.</p>
+  </li>
+</ul>
+
+<p>LLMs are promising because they can ingest raw, high-volume sensor data and let both experts and non-experts explore it using natural language. This can reduce the need for complex, hand-crafted queries. In principle, a fleet manager could feed data from an IoT sensor into an LLM and ask directly about unsafe driving events instead of relying on a data science team.</p>
+
+<p>Unfortunately, directly sending raw telemetry to an LLM is impractical because (1) context windows truncate long time horizons, (2) per-token costs scale linearly with data volume, and (3) latency grows with input size, making interactive use difficult. For example, an enterprise-scale IoT system may deploy millions of devices and generate trillions of data packets annually. If each JSON packet contains about 600 characters, and one token corresponds to roughly four characters, the monthly token volume would be around 1.25×10<sup>13</sup> tokens. At standard API pricing, the monthly input cost alone would be approximately $375M. Beyond cost, finite context windows are a hard limit: even with a 10<sup>6</sup>-token capacity, the window would be saturated in about 0.21 seconds at these data rates. This prevents the LLM from detecting long-term trends because most of the data is truncated. When fed noisy and contextless numerical streams, LLMs often produce plausible-sounding but incorrect answers—an unacceptable failure mode in safety-critical settings.</p>
+
+<p>We make two key observations to enable data-driven IoT telemetry analysis with LLMs. On the <strong>data collection side</strong>, devices must be efficient with what they send back to the cloud. Rather than transmitting raw sensor streams, an IoT device should send short summaries of on-device readings, such as the mean and variance of acceleration over a 3-second window. However, this must be done carefully: over-filtering reduces accuracy and may require expensive re-collection. On the <strong>data analysis side</strong>, analysts lack a systematic way to explore IoT data with LLMs, making queries slow, expensive, or infeasible. We need a system that extracts the analytical task from the user’s query, identifies the relevant data, and selects an appropriate representation (such as summaries, counts, or geographic markers) before involving an LLM. This allows the model to receive a structured, compact view of the data, reducing cost while improving accuracy.</p>
+
+<p>We present Flash-Fusion, an end-to-end system that lets users ask high-level questions about IoT data and receive accurate responses with low latency and low cost. During data collection, the edge compresses raw streams into fixed-window statistical summaries—mean and variance of acceleration magnitude, high-percentile axes, and GPS/time context—before transmission. This summarize-at-source design, common in edge computing, reduces transmission by 73.5% in our study while preserving key features needed for behavior analysis.</p>
+
+<p>Once this condensed data reaches the cloud, the challenge shifts to interpretation: users want insights but may not know how to query complex IoT datasets. To reduce user burden, the cloud-side planner identifies the analytical task implied by the user’s question (e.g., detecting the keyword “dangerous” to trigger an <em>Aggressive Driving</em> analysis) and fetches the matching data representation. Flash-Fusion bridges the gap between qualitative user queries (such as smoothest ride) and quantitative sensor signals (like accelerometer readings). After the firmware summarizes and transmits the data, a serverless backend clusters it into driving profiles ranging from <em>Calm</em> to <em>Very Aggressive</em>. At query time, the planner retrieves only the relevant cluster summaries, anchors them to campus landmarks, and assembles a compact, context-rich prompt that provides the LLM with the background it needs to generate accurate and nuanced responses.</p>
+
+<p>Flash-Fusion enables a wide range of users—safety officers, urban planners, fleet managers, and data scientists—to explore IoT data quickly and efficiently without manual scripting or data wrangling.</p>
+
+<p>We demonstrate Flash-Fusion’s performance using real deployments on a university bus fleet. Across a variety of real-world queries from different personas, the system achieves a 95% latency reduction and a 98% decrease in token usage and API cost, while maintaining reliable, high-quality responses compared to a state-of-the-art 8B-parameter model.</p>
+
+<p>In summary, our primary contributions are the following:</p>
+
+<ol>
+  <li>A characterization of current limitations in applying LLMs to large-scale IoT telemetry using real vehicular data.</li>
+  <li>The design and implementation of Flash-Fusion, an end-to-end system that integrates on-device data reduction, serverless cloud-based clustering, and an LLM-powered planner to automate the data-to-insight pipeline for IoT analytics.</li>
+  <li>A quantitative and qualitative demonstration of Flash-Fusion’s ability to reduce latency and cost while maintaining factual consistency compared to naïve, raw-data prompting of state-of-the-art LLMs.</li>
+  <li>The collection and development of a vehicular transportation dataset and application that we will open-source upon acceptance, broadening the scope of analysis possible for smart city transit systems.</li>
+</ol>
+
+<p>Full paper can be found <a href="https://arxiv.org/abs/2511.11885">here</a>.</p>
+
+  </article>
+
+  <!-- mathjax -->
+  
+  
+  <!-- disqus comments -->
+ 
+  
+</div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrap">
+
+    <!-- <h2 class="footer-heading">Kausar Patherya</h2> -->
+
+    <div class="footer-col-1 column">
+      <ul>
+        <li>Kausar Patherya</li>
+        <!-- <li><a href="mailto:"></a></li> -->
+      </ul>
+    </div>
+
+    <div class="footer-col-2 column">
+      <ul>
+        <li>
+          <a href="https://github.com/kpath1999">
+            <span class="icon github">
+              <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C2C2" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761
+                c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32
+                c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472
+                c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037
+                C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65
+                c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261
+                c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082
+                c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129
+                c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+            <span class="username">kpath1999</span>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://linkedin.com/in/k-path">
+            <span class="icon linkedin">
+              <svg style="filter: grayscale(50%);" class="linkedin-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2">
+                <rect width="24" height="24" fill="#D3D3D3"/>
+                <path d="M20.45,20.45H17.1v-5.21c0-1.25-0.02-2.85-1.74-2.85c-1.74,0-2.01,1.36-2.01,2.76v5.3h-3.35V9.5h3.22v1.47h0.04 c0.45-0.85,1.54-1.74,3.18-1.74c3.4,0,4.03,2.24,4.03,5.15L20.45,20.45L20.45,20.45z M5.95,8.03c-1.08,0-1.95-0.88-1.95-1.95 c0-1.08,0.87-1.95,1.95-1.95c1.07,0,1.95,0.87,1.95,1.95C7.9,7.15,7.02,8.03,5.95,8.03z M7.63,20.45H4.27V9.5h3.36V20.45z" fill="#FFFFFF"/>
+              </svg>
+            </span>
+            <span class="username">k-path</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://www.youtube.com/@gatechai">
+          <span class="icon youtube">
+          <svg version="1.1" class="youtube-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" width="16" height="16" enable-background="new 0 0 16 16" xml:space="preserve">
+          <path fill="#C2C2C2" d="M15.8,4.8c-0.2-1.3-0.8-2.2-2.2-2.4C11.4,2,8,2,8,2S4.6,2,2.4,2.4C1,2.6,0.3,3.5,0.2,4.8C0,6.1,0,8,0,8 s0,1.9,0.2,3.2c0.2,1.3,0.8,2.2,2.2,2.4C4.6,14,8,14,8,14s3.4,0,5.6-0.4c1.4-0.3,2-1.1,2.2-2.4C16,9.9,16,8,16,8S16,6.1,15.8,4.8z M6,11V5l5,3L6,11z"/>
+          </svg>
+          </span>
+          <span class="username">gatechai</span>
+          </a>
+          </li>
+          <li>
+          <a href="https://creators.spotify.com/pod/show/gatechai">
+          <span class="icon spotify">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#C2C2C2" class="bi bi-spotify" viewBox="0 0 16 16"> <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.5.5 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288"/> </svg>
+          <!-- <svg version="1.1" class="spotify-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" width="16" height="16" enable-background="new 0 0 16 16" xml:space="preserve">
+          <path fill="#C2C2C2" d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M11.7,11.5c-0.1,0.2-0.3,0.3-0.5,0.3 c-0.1,0-0.2,0-0.3-0.1C9.6,11.1,8.2,10.8,6.8,11c-1.3,0.1-2.5,0.5-3.7,1c-0.2,0.1-0.5,0-0.7-0.2c-0.1-0.2,0-0.5,0.2-0.7 c1.3-0.6,2.7-1,4.2-1.1c1.6-0.2,3.2,0.2,4.6,0.9C11.6,11.1,11.7,11.3,11.7,11.5z M12.7,9.3c-0.1,0.2-0.4,0.4-0.6,0.4 c-0.1,0-0.2,0-0.3-0.1c-1.6-0.9-3.4-1.3-5.2-1.2c-1.6,0.1-3.2,0.6-4.6,1.4c-0.3,0.1-0.6,0-0.8-0.2c-0.1-0.3,0-0.6,0.2-0.8 c1.6-0.9,3.3-1.4,5.1-1.5c2-0.1,4,0.3,5.8,1.3C12.7,8.7,12.8,9.1,12.7,9.3z M13.7,6.9c-0.2,0.3-0.5,0.4-0.8,0.4 c-0.1,0-0.2,0-0.3-0.1C10.6,6,8.4,5.6,6.2,5.7C4.3,5.9,2.4,6.4,0.7,7.3c-0.3,0.2-0.7,0-0.9-0.3C-0.3,6.7-0.2,6.3,0.2,6.1 c2-1,4.1-1.6,6.2-1.8c2.5-0.2,4.9,0.3,7.1,1.5C13.8,6,13.9,6.5,13.7,6.9z"/>
+          </svg> -->
+          </span>
+          <span class="username">gatechai</span>
+          </a>
+          </li>
+      </ul>
+    </div>
+
+    <div class="footer-col-3 column">
+      <p class="text">I like to write, design, code, and share some of the cool projects I'm working on. From AI to CrossFit, I'm all about pushing limits. This blog captures some of that. I try not to be boring, hope you had fun reading!</p>
+    </div>
+
+  </div>
+
+</footer>
+
+    </body>
+</html>
